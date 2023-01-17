@@ -1,15 +1,29 @@
 ---
+import Banner from "../components/Banner.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/pages/Index.less";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+	<section class="section1">
+		<div class="blur-background">
+			<h1>Taberna Jovi</h1>
+			<h5>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum,
+				explicabo.
+			</h5>
+		</div>
+	</section>
+	<section class="section2">
+		<Banner
+			title="Cócteles"
+			subtitle="Descubre nuestros cócteles"
+			background="/cocktail.jpg"
+		/>
+		<Banner
+			title="Tapas"
+			subtitle="Prueba nuestras tapas"
+			background="/sandwich.jpg"
+		/>
+	</section>
+</MainLayout>

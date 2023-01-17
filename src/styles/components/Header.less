@@ -1,0 +1,35 @@
+@import '../Var.less';
+
+header {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	width: 100%;
+	background: @bg-t-black;
+	z-index: 1;
+
+	nav {
+		height: 100%;
+		width: 50%;
+		display: flex;
+		justify-content: space-evenly;
+
+		a {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			opacity: 0.8;
+			font-weight: lighter;
+
+			.logo {
+				height: 40px;
+			}
+		}
+		
+		a:hover {
+			font-weight: bolder;
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+@import '../Var.less';
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	color: @f-pale-white;
+	font-weight: normal;
+	background-repeat: no-repeat;
+	scroll-behavior: smooth;
+	text-transform: none;
+}
+
+body {
+	font-size: 100%;
+}
+
+h1 {
+	font-size: @fs-h1;
+	font-weight: bolder;
+}
+
+h2 {
+	font-size: @fs-h2;
+}
+
+h3 {
+	font-size: @fs-h3;
+}
+
+h4 {
+	font-size: @fs-h4;
+}
+
+h5 {
+	font-size: @fs-h5;
+}
+
+h1, h2, h3, h4 ,h5 {
+	margin: 5px;
+}
+
+p {
+	font-size: @fs-p;
+}
+
+.blur-background {
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
+	backdrop-filter: saturate(180%) blur(10px);
+}
