@@ -1,18 +1,10 @@
 @import '../Var.less';
 
-section {
-	margin-bottom: 10px;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.section1 {
+.index-section1 {
 	height: 100vh;
 	background-image: url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg');
 	background-attachment: fixed;
-	background-size: cover;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 
 	div {
@@ -22,11 +14,16 @@ section {
 		align-items: center;
 		padding: 30px;
 		background-color: @bg-t-black;
+		h1, h5 {
+			background: #FF79A6;
+			background: linear-gradient(to right, #FF79A6 0%, #57BDE5 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	}
 }
 
-.section2 {
+.index-section2 {
 	height: 700px;
 	display: flex;
-	justify-content: space-around;
 }
