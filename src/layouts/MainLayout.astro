@@ -1,13 +1,47 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/Var.less";
 import "../styles/layouts/MainLayout.less";
+import { MenuNodeItem } from "../types/menuNodeItem";
+
+interface Props {
+	pageTittle?: string;
+	subMenu?: MenuNodeItem[];
+}
+
+const { pageTittle, subMenu } = Astro.props;
+
+const fullPageTitlle = pageTittle ? "| " + pageTittle : "";
+
+const menu: MenuNodeItem[] = [
+	{
+		url: "/drinks",
+		name: "Bebida",
+	},
+	{
+		url: "/food",
+		name: "Menú",
+	},
+	{
+		url: "/#map",
+		name: "Dónde estamos",
+	},
+	{
+		url: "#footer",
+		name: "Contacto",
+	},
+	{
+		url: "/galery",
+		name: "Galería",
+	}
+];
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,12 +50,20 @@ import "../styles/layouts/MainLayout.less";
 			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Astro |</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+			crossorigin="anonymous"
+			referrerPolicy="no-referrer"
+		/>
+		<title>Jovi {fullPageTitlle}</title>
 	</head>
 	<body>
-		<Header />
-		<main>
+		<Header menu={menu} subMenu={subMenu} />
+		<main class="flex flex-direction gap" style="--gap: 10px; --direction: column">
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

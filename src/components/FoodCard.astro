@@ -1,0 +1,42 @@
+---
+import "../styles/components/FoodCard.less";
+
+interface Props {
+	title: string;
+	price: string;
+	allergens?: string[];
+	text?: string;
+	background?: string;
+}
+
+const { title, price, allergens = [], text, background } = Astro.props;
+
+const backgroundImage = "background-image: url(" + background + ");";
+
+const allergenUrls = new Map(
+	allergens.map((allergen) => [allergen, "/allergens/" + allergen + ".png"])
+);
+---
+
+<div class="foodCard">
+	<div class="image" style={backgroundImage}></div>
+	<div class="info">
+		<h4>{title}</h4>
+		<h5>{price} €</h5>
+		<p>{text}</p>
+		<div>
+			{
+				allergens.map((allergen) => (
+					<a href="#allergens">
+						<img
+							class="height"
+							style="--height: 64px"
+							src={allergenUrls.get(allergen)}
+							alt={allergen}
+						/>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</div>

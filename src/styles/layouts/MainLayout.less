@@ -5,15 +5,19 @@
 	padding: 0;
 	text-decoration: none;
 	font-family: 'Roboto', sans-serif;
-	color: @f-pale-white;
+	color: @pale-white;
 	font-weight: normal;
 	background-repeat: no-repeat;
 	scroll-behavior: smooth;
 	text-transform: none;
+	background-size: cover;
+	background-position: center;
+
 }
 
 body {
 	font-size: 100%;
+	background-color: @black;
 }
 
 h1 {
@@ -37,20 +41,72 @@ h5 {
 	font-size: @fs-h5;
 }
 
-h1, h2, h3, h4 ,h5 {
-	margin: 5px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 5px 0px;
 }
 
 p {
 	font-size: @fs-p;
 }
 
-.blur-background {
-	-webkit-backdrop-filter: saturate(180%) blur(10px);
-	backdrop-filter: saturate(180%) blur(10px);
+nav a {
+	font-size: @fs-p;
 }
 
-section {
-	margin-bottom: 10px;
-	background-size: cover;
+.blur-background {
+	-webkit-backdrop-filter: saturate(180%) blur(15px);
+	backdrop-filter: saturate(180%) blur(15px);
+}
+
+.flex {
+	display: flex;
+}
+
+.justify-content {
+	justify-content: var(--justify);
+}
+
+.align-items {
+	align-items: var(--align);
+}
+
+.flex-direction {
+	flex-direction: var(--direction);
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.gap {
+	gap: var(--gap);
+}
+
+.height {
+	height: var(--height);
+}
+
+.width {
+	width: var(--width);
+}
+
+.logo {
+	height: 40px;
+	opacity: 0.8;
+}
+
+.logo:hover {
+	opacity: 1;
+}
+
+.margin {
+	margin: var(--margin)
+}
+
+.padding {
+	padding: var(--padding)
 }

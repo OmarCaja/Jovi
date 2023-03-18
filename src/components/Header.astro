@@ -1,13 +1,36 @@
 ---
-import '../styles/components/Header.less';
+import "../styles/components/Header.less";
+import { MenuNodeItem } from "../types/menuNodeItem";
+
+interface Props {
+	menu: MenuNodeItem[];
+	subMenu?: MenuNodeItem[];
+}
+
+const { menu = [], subMenu = [] } = Astro.props;
+const subMenuAvailable = subMenu.length != 0;
 ---
 
-<header class="blur-background">
+<header class="navigation blur-background">
 	<nav>
-		<a href="/"><img class="logo" src="/logo.png" alt="Logo"></a>
-		<a href="#">Bebida</a>
-		<a href="/food">Comida</a>
-		<a href="#">Dónde estamos</a>
-		<a href="#">Contacto</a>
+		<a href="/"><img class="logo" src="/logo.png" alt="Logo" /></a>
+		{
+			menu.map((menuNode) => (
+				<a href={menuNode.url}>{menuNode.name}</a>
+			))
+		}
 	</nav>
+	<div
+		class={subMenuAvailable
+			? "navigation subnavigation blur-background"
+			: ""}
+	>
+		<nav>
+			{
+				subMenu.map((menuNode) => (
+					<a href={menuNode.url}>{menuNode.name}</a>
+				))
+			}
+		</nav>
+	</div>
 </header>

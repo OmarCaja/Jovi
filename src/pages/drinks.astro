@@ -1,0 +1,63 @@
+---
+import { DrinkItem } from "../types/drinkItem";
+import Drink from "../components/Drink.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/pages/Drinks.less";
+
+const refreshments: DrinkItem[] = [
+	{
+		title: "Cocal-Cola 25cl",
+		description: "Compuesto de cosas con mucho azúcar y mucho gas",
+		price: "2.20",
+	},
+	{
+		title: "Fanta de Naranja",
+		price: "2.20",
+	},
+	{
+		title: "Cocal-Cola 25cl",
+		description: "Compuesto de cosas con mucho azúcar y mucho gas",
+		price: "2.20",
+	},
+	{
+		title: "Fanta de Naranja",
+		price: "2.20",
+	},
+	{
+		title: "Cocal-Cola 25cl",
+		description: "Compuesto de cosas con mucho azúcar y mucho gas",
+		price: "2.20",
+	},
+	{
+		title: "Fanta de Naranja",
+		price: "2.20",
+	},
+	{
+		title: "Cocal-Cola 25cl",
+		description: "Compuesto de cosas con mucho azúcar y mucho gas",
+		price: "2.20",
+	},
+	{
+		title: "Fanta de Naranja",
+		price: "2.20",
+	}
+];
+---
+
+<MainLayout pageTittle="Bebidas">
+	<div class="main-section flex justify-content" style="--justify: center">
+		<div
+			class="width flex flex-direction justify-content"
+			style="--width: 70%; --direction: column; --justify: center"
+		>
+			<section
+				class="drinks-section blur-background margin padding flex flex-direction gap"
+				style="--margin: 200px 0px; --padding: 100px; --direction:column; --gap: 40px"
+			>
+				<h1>Bebidas</h1>
+				<h2>Refrescos</h2>
+				{refreshments.map((drink) => <Drink drink={drink} />)}
+			</section>
+		</div>
+	</div>
+</MainLayout>

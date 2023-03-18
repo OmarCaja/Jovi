@@ -1,0 +1,15 @@
+---
+import { GalleryCardItem } from "../types/galleryCardItem";
+import "../styles/components/GalleryCard.less";
+
+interface Props {
+	galleryCard: GalleryCardItem;
+}
+
+const { galleryCard } = Astro.props;
+
+const backgroundImage = "background-image: url(" + galleryCard.image + ")";
+---
+
+<div class="gallery-card" style={backgroundImage}></div>
+

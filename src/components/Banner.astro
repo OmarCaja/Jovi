@@ -8,12 +8,12 @@ interface Props {
 	background?: string;
 }
 
-const {title, subtitle, text, background} = Astro.props;
+const { title, subtitle, text, background } = Astro.props;
 
-const backgroundImage = "background-image: url(" + background + ");"
+const backgroundImage = "background-image: url(" + background + "); --direction: column; --align: center";
 ---
 
-<div class="banner" style={backgroundImage}>
+<div class="banner flex flex-direction align-items" style={backgroundImage}>
 	<h2>{title}</h2>
 	<h5>{subtitle}</h5>
 </div>

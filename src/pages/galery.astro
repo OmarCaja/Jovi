@@ -1,0 +1,67 @@
+---
+import GalleryCard from "../components/GalleryCard.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/pages/Galery.less";
+import { GalleryCardItem } from "../types/galleryCardItem";
+
+const galleyImages: GalleryCardItem[] = [
+	{
+		image: "/cocktail.jpg",
+	},
+	{
+		image: "/drinks.jpg",
+	},
+	{
+		image: "/menu.jpg",
+	},
+	{
+		image: "/sandwich.jpg",
+	},
+	{
+		image: "/cocktail.jpg",
+	},
+	{
+		image: "/drinks.jpg",
+	},
+	{
+		image: "/menu.jpg",
+	},
+	{
+		image: "/sandwich.jpg",
+	},
+	{
+		image: "/cocktail.jpg",
+	},
+	{
+		image: "/drinks.jpg",
+	},
+	{
+		image: "/menu.jpg",
+	},
+	{
+		image: "/sandwich.jpg",
+	},
+	{
+		image: "/cocktail.jpg",
+	},
+	{
+		image: "/drinks.jpg",
+	},
+	{
+		image: "/menu.jpg",
+	},
+	{
+		image: "/sandwich.jpg",
+	}
+];
+---
+
+<MainLayout pageTittle="Galería">
+	<section class="gallery">
+		{
+			galleyImages.map((galleryImage) => (
+				<GalleryCard galleryCard={galleryImage} />
+			))
+		}
+	</section>
+</MainLayout>

@@ -1,16 +1,19 @@
 @import '../Var.less';
 
 header {
+	z-index: 1;
+}
+
+.navigation {
 	position: fixed;
 	display: flex;
 	justify-content: center;
 	height: 60px;
 	width: 100%;
-	background: @bg-t-black;
-	z-index: 1;
+	background: @transparent-black;
+	border-bottom: 1px solid @border-white;
 
 	nav {
-		height: 100%;
 		width: 50%;
 		display: flex;
 		justify-content: space-evenly;
@@ -18,18 +21,16 @@ header {
 		a {
 			display: flex;
 			align-items: center;
-			height: 100%;
 			opacity: 0.8;
-			font-weight: lighter;
-
-			.logo {
-				height: 40px;
-			}
 		}
 		
 		a:hover {
-			font-weight: bolder;
 			opacity: 1;
 		}
 	}
+}
+
+.subnavigation {
+	margin-top: 61px;
+	background: @transparent-gray;
 }
