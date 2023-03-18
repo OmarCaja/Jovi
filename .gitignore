@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 # vs code
 .vscode/
+
+# idea
+.idea/
