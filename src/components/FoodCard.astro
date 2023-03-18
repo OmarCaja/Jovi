@@ -14,7 +14,7 @@ const { title, price, allergens = [], text, background } = Astro.props;
 const backgroundImage = "background-image: url(" + background + ");";
 
 const allergenUrls = new Map(
-	allergens.map((allergen) => [allergen, "/allergens/" + allergen + ".png"])
+	allergens.map((allergen) => [allergen, "/Jovi/allergens/" + allergen + ".png"])
 );
 ---
 
