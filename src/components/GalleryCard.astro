@@ -7,9 +7,8 @@ interface Props {
 }
 
 const { galleryCard } = Astro.props;
-
-const backgroundImage = "background-image: url(" + galleryCard.image + ")";
 ---
 
-<div class="gallery-card" style={backgroundImage}></div>
-
+<div class="image-container">
+	<img class="gallery-card" src={galleryCard.image} alt="Example image" />
+</div>

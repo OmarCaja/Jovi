@@ -4,7 +4,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Galery.less";
 import { GalleryCardItem } from "../types/galleryCardItem";
 
-
 const galleyImages: GalleryCardItem[] = [
 	{
 		image: "/Jovi/cocktail.jpg",
@@ -53,12 +52,15 @@ const galleyImages: GalleryCardItem[] = [
 	},
 	{
 		image: "/Jovi/sandwich.jpg",
-	}
+	},
 ];
 ---
 
 <MainLayout pageTittle="Galería">
-	<section class="gallery">
+	<section
+		class="gallery flex flex-wrap gap margin"
+		style="--gap: 10px; --margin: 61px 0px 0px 0px"
+	>
 		{
 			galleyImages.map((galleryImage) => (
 				<GalleryCard galleryCard={galleryImage} />

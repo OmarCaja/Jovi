@@ -2,7 +2,7 @@ FROM debian:latest
 
 ARG TOKEN=not-set
 
-RUN apt-get update && apt-get install -y curl nodejs npm -y
+RUN apt-get update && apt-get install -y curl nodejs npm
 
 RUN npm install -g yarn
 
