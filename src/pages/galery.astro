@@ -53,18 +53,20 @@ const galleyImages: GalleryCardItem[] = [
 	{
 		image: "/Jovi/sandwich.jpg",
 	},
+	{
+		image: "/Jovi/cocktail.jpg",
+	},
 ];
 ---
 
 <MainLayout pageTittle="Galería">
-	<section
-		class="gallery flex flex-wrap gap margin"
-		style="--gap: 10px; --margin: 61px 0px 0px 0px"
-	>
-		{
-			galleyImages.map((galleryImage) => (
-				<GalleryCard galleryCard={galleryImage} />
-			))
-		}
+	<section>
+		<ul class="gallery flex flex-wrap gap" style="--gap: 5px">
+			{
+				galleyImages.map((galleryImage) => (
+					<GalleryCard galleryCard={galleryImage} />
+				))
+			}
+		</ul>
 	</section>
 </MainLayout>

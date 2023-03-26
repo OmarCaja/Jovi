@@ -9,6 +9,6 @@ interface Props {
 const { galleryCard } = Astro.props;
 ---
 
-<div class="image-container">
-	<img class="gallery-card" src={galleryCard.image} alt="Example image" />
-</div>
+<li class="gallery-card">
+	<img src={galleryCard.image} alt="Example image" />
+</li>
