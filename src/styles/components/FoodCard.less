@@ -3,7 +3,7 @@
 .foodCard {
 	flex: 1 0 21%;
 	background-color: @dark-gray;
-	min-width: 340px;
+	min-width: 320px;
 
 	.image {
 		background-position: center;
@@ -24,5 +24,11 @@
 
 	.icon {
 		margin: 0px 5px 0px 0px;
+	}
+}
+
+@media (max-width : @tablet) {
+	.foodCard {
+		width: 100%;
 	}
 }

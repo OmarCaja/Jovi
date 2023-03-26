@@ -5,6 +5,25 @@
 	background-attachment: fixed;
 }
 
-.drinks-section {
-	background-color: @transparent-black;
+.drinks-wrapper {
+	width: 70%;
+
+	.drinks-section {
+		gap: 40px;
+		margin: 200px 0px;
+		padding: 100px;
+		background-color: @transparent-black;
+	}
+}
+
+@media (max-width : @tablet) {
+	.drinks-wrapper {
+		width: 100%;
+
+		.drinks-section {
+			gap: 30px;
+			margin: 50px 0px;
+			padding: 30px;
+		}
+	}
 }

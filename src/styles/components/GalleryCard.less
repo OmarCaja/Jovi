@@ -1,7 +1,7 @@
 @import '../Var.less';
 
 .gallery-card {
-	height: 40vh;
+	height: 30vh;
 	flex-grow: 1;
 
 	img {
@@ -11,17 +11,10 @@
 	}
 }
 
-@media (max-aspect-ratio: 1/1) {
-	.gallery-card {
-		height: 30vh;
-	}
-}
-
-@media (max-aspect-ratio: 1/1) and (max-width: 610px) {
+@media (max-width : @tablet) {
 
 	.gallery-card {
 		height: auto;
-		width: 100%;
 
 		img {
 			width: 100%;
