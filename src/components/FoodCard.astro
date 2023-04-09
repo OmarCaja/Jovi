@@ -1,32 +1,32 @@
 ---
 import "../styles/components/FoodCard.less";
+import { FoodCardItem } from "../types/foodCardItem";
 
 interface Props {
-	title: string;
-	price: string;
-	allergens?: string[];
-	text?: string;
-	background?: string;
+	foodCard: FoodCardItem;
 }
 
-const { title, price, allergens = [], text, background } = Astro.props;
+const { foodCard } = Astro.props;
 
-const backgroundImage = "background-image: url(" + background + ");";
+const backgroundImage = "background-image: url(" + foodCard.image + ");";
 
 const allergenUrls = new Map(
-	allergens.map((allergen) => [allergen, "/Jovi/allergens/" + allergen + ".png"])
+	foodCard.allergens.map((allergen) => [
+		allergen,
+		"/Jovi/allergens/" + allergen + ".png",
+	])
 );
 ---
 
 <div class="foodCard">
 	<div class="image" style={backgroundImage}></div>
 	<div class="info">
-		<h4>{title}</h4>
-		<h5>{price} €</h5>
-		<p>{text}</p>
+		<h4>{foodCard.title}</h4>
+		<h5>{foodCard.price} €</h5>
+		<p>{foodCard.text}</p>
 		<div>
 			{
-				allergens.map((allergen) => (
+				foodCard.allergens.map((allergen) => (
 					<a href="#allergens">
 						<img
 							class="height"

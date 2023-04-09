@@ -11,7 +11,7 @@ const { menu = [], subMenu = [] } = Astro.props;
 const subMenuAvailable = subMenu.length != 0;
 ---
 
-<header class="navigation blur-background">
+<header class="navigation navigation-blur-blackground">
 	<nav>
 		<a href="/Jovi/"><img class="logo" src='/Jovi/logo.png' alt="Logo" /></a>
 		{
@@ -22,7 +22,7 @@ const subMenuAvailable = subMenu.length != 0;
 	</nav>
 	<div
 		class={subMenuAvailable
-			? "navigation subnavigation blur-background"
+			? "navigation subnavigation navigation-blur-blackground"
 			: ""}
 	>
 		<nav>

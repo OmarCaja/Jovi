@@ -1,7 +1,8 @@
 ---
-import FoodCard from "../components/FoodCard.astro";
+import FoodSection from "../components/FoodSection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Food.less";
+import { FoodSectionItem } from "../types/foodSection";
 import { MenuNodeItem } from "../types/menuNodeItem";
 
 const subMenu: MenuNodeItem[] = [
@@ -22,129 +23,126 @@ const subMenu: MenuNodeItem[] = [
 		name: "Tostas",
 	},
 ];
+
+const rationsSection: FoodSectionItem = {
+	id: "rations",
+	tittle: "Raciones",
+	foodCards: [
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: [],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: [],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+	],
+};
+
+const sandwichesSection: FoodSectionItem = {
+	id: "sandwiched",
+	tittle: "Sandwiches",
+	foodCards: [
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: ["celery", "dairy"],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: [],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+		{
+			title: "Sandwich Jovi",
+			price: "2,20",
+			allergens: [],
+			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
+			image: "/Jovi/sandwich.jpg",
+		},
+	],
+};
 ---
 
 <MainLayout pageTittle="Menú" subMenu={subMenu}>
 	<section class="main-section height" style="--height: 100vh"></section>
 	<div class="flex justify-content" style="--justify: center">
 		<div class="food-wrapper flex flex-direction gap">
-			<section id="rations" class="flex flex-wrap gap">
-				<div
-					class="flex justify-content align-items width"
-					style="--justify: center; --align: center; --width: 120px"
-				>
-					<h2 class="food-section-tittle">Raciones</h2>
-				</div>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					allergens={["celery", "dairy"]}
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-			</section>
-			<section
-				id="sandwiches"
-				class="flex flex-wrap gap"
-				style="--gap: 10px"
-			>
-				<div
-					class="flex justify-content align-items width"
-					style="--justify: center; --align: center; --width: 120px"
-				>
-					<h2 class="food-section-tittle">Sandwiches</h2>
-				</div>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-				<FoodCard
-					title="Sandwich Jovi"
-					price="2,20"
-					text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae."
-					background="/Jovi/sandwich.jpg"
-				/>
-			</section>
+			<FoodSection foodSection={rationsSection} />
+			<FoodSection foodSection={sandwichesSection} />
 		</div>
 	</div>
 </MainLayout>

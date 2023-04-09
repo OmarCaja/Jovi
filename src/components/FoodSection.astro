@@ -1,0 +1,20 @@
+---
+import FoodCard from "../components/FoodCard.astro";
+import { FoodSectionItem } from "../types/foodSection";
+
+interface Props {
+	foodSection: FoodSectionItem;
+}
+
+const { foodSection } = Astro.props;
+---
+
+<section id={foodSection.id} class="flex flex-wrap gap">
+	<div
+		class="flex justify-content align-items width"
+		style="--justify: center; --align: center; --width: 120px"
+	>
+		<h2 class="food-section-tittle">{foodSection.tittle}</h2>
+	</div>
+	{foodSection.foodCards.map((foddCard) => <FoodCard foodCard={foddCard} />)}
+</section>
