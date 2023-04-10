@@ -1,0 +1,18 @@
+---
+import { DrinkSectionItem } from "../types/drinkSection";
+import "../styles/components/DrinkSection.less";
+import Drink from "../components/Drink.astro";
+
+interface Props {
+	drinkSection: DrinkSectionItem;
+}
+
+const { drinkSection } = Astro.props;
+---
+
+<section id={drinkSection.id} class="drink-section" style="display: none;">
+	<h2>{drinkSection.tittle}</h2>
+	<ul class="flex flex-direction" style="--direction: column">
+		{drinkSection.drinks.map((drink) => <Drink drink={drink} />)}
+	</ul>
+</section>

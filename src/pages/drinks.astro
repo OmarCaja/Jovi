@@ -1,63 +1,123 @@
 ---
-import { DrinkItem } from "../types/drinkItem";
-import Drink from "../components/Drink.astro";
+import DrinkSection from "../components/DrinkSection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Drinks.less";
+import { DrinkSectionItem } from "../types/drinkSection";
 
-const refreshments: DrinkItem[] = [
-	{
-		title: "Cocal-Cola 25cl",
-		description: "Compuesto de cosas con mucho azúcar y mucho gas",
-		price: "2.20",
-	},
-	{
-		title: "Fanta de Naranja",
-		price: "2.20",
-	},
-	{
-		title: "Cocal-Cola 25cl",
-		description: "Compuesto de cosas con mucho azúcar y mucho gas",
-		price: "2.20",
-	},
-	{
-		title: "Fanta de Naranja",
-		price: "2.20",
-	},
-	{
-		title: "Cocal-Cola 25cl",
-		description: "Compuesto de cosas con mucho azúcar y mucho gas",
-		price: "2.20",
-	},
-	{
-		title: "Fanta de Naranja",
-		price: "2.20",
-	},
-	{
-		title: "Cocal-Cola 25cl",
-		description: "Compuesto de cosas con mucho azúcar y mucho gas",
-		price: "2.20",
-	},
-	{
-		title: "Fanta de Naranja",
-		price: "2.20",
-	}
-];
+const refreshments: DrinkSectionItem = {
+	id: "refreshments",
+	tittle: "Refrescos",
+	drinks: [
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+	],
+};
+
+const beers: DrinkSectionItem = {
+	id: "beers",
+	tittle: "Cervezas",
+	drinks: [
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+	],
+};
 ---
+
+<script src="../scripts/pages/drinks.ts"></script>
 
 <MainLayout pageTittle="Bebidas">
 	<div class="main-section flex justify-content" style="--justify: center">
 		<div
 			class="drinks-wrapper flex flex-direction justify-content"
 			style="--direction: column; --justify: center"
+			style="--direction: column; --justify: center"
 		>
-			<section
-				class="drinks-section blur-background flex flex-direction"
+			<div
+				class="drinks-section-container blur-background flex flex-direction"
 				style="--direction:column"
 			>
 				<h1>Bebidas</h1>
-				<h2>Refrescos</h2>
-				{refreshments.map((drink) => <Drink drink={drink} />)}
-			</section>
+				<div class="buttons-wrapper">
+					<ul class="buttons flex">
+						<li>
+							<button
+								role="button"
+								class="tab-button js-tab-button"
+								data-target-id="refreshments">Refrescos</button
+							>
+						</li>
+						<li>
+							<button
+								role="button"
+								class="tab-button js-tab-button"
+								data-target-id="beers">Cervezas</button
+							>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="drinks-section flex flex-direction"
+					style="--direction: column"
+				>
+					<DrinkSection drinkSection={refreshments} />
+					<DrinkSection drinkSection={beers} />
+				</div>
+			</div>
 		</div>
 	</div>
 </MainLayout>

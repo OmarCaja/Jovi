@@ -4,7 +4,13 @@ footer {
 	background-color: @dark-gray;
 
 	.footer-container {
+		width: 70%;
 		padding: 50px 0px;
+		align-items: start;
+
+		.social-media {
+			flex-direction: column;
+		}
 	}
 
 	a[class^='fa-'] {
@@ -29,5 +35,22 @@ footer {
 	.fa-heart:hover {
 		color: @pale-pink;
 		animation: heartbeat .40s infinite alternate;
+	}
+}
+
+@media (max-width : @tablet) {
+
+	footer {
+		.footer-container {
+			width: 100%;
+			padding: 30px;
+			align-items: center;
+			flex-direction: column;
+			gap: 30px;
+
+			.social-media {
+				flex-direction: row;
+			}
+		}
 	}
 }
