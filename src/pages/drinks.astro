@@ -1,5 +1,6 @@
 ---
 import DrinkSection from "../components/DrinkSection.astro";
+import TabButton from "../components/TabButton.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Drinks.less";
 import { DrinkSectionItem } from "../types/drinkSection";
@@ -76,9 +77,67 @@ const beers: DrinkSectionItem = {
 		},
 	],
 };
----
 
-<script src="../scripts/pages/drinks.ts"></script>
+const cocktails: DrinkSectionItem = {
+	id: "cocktails",
+	tittle: "Cócteles",
+	drinks: [
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+	],
+};
+
+const coffes: DrinkSectionItem = {
+	id: "coffes",
+	tittle: "Cafés",
+	drinks: [
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+		{
+			title: "Fanta de Naranja",
+			price: "2.20",
+		},
+		{
+			title: "Coca-Cola 25cl",
+			description: "Compuesto de cosas con mucho azúcar y mucho gas",
+			price: "2.20",
+		},
+	],
+};
+---
 
 <MainLayout pageTittle="Bebidas">
 	<div class="main-section flex justify-content" style="--justify: center">
@@ -92,30 +151,28 @@ const beers: DrinkSectionItem = {
 				style="--direction:column"
 			>
 				<h1>Bebidas</h1>
-				<div class="buttons-wrapper">
-					<ul class="buttons flex">
-						<li>
-							<button
-								role="button"
-								class="tab-button js-tab-button"
-								data-target-id="refreshments">Refrescos</button
-							>
-						</li>
-						<li>
-							<button
-								role="button"
-								class="tab-button js-tab-button"
-								data-target-id="beers">Cervezas</button
-							>
-						</li>
-					</ul>
-				</div>
+				<ul class="buttons-wrapper flex">
+					<li>
+						<TabButton id="refreshments" title="Refrescos" />
+					</li>
+					<li>
+						<TabButton id="beers" title="Cervezas" />
+					</li>
+					<li>
+						<TabButton id="cocktails" title="Cócteles" />
+					</li>
+					<li>
+						<TabButton id="coffes" title="Cafés" />
+					</li>
+				</ul>
 				<div
 					class="drinks-section flex flex-direction"
 					style="--direction: column"
 				>
 					<DrinkSection drinkSection={refreshments} />
 					<DrinkSection drinkSection={beers} />
+					<DrinkSection drinkSection={cocktails} />
+					<DrinkSection drinkSection={coffes} />
 				</div>
 			</div>
 		</div>

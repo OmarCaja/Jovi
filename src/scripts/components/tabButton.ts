@@ -4,6 +4,7 @@ let displayedSectionId: string;
 buttons.forEach(button => {
 	button.addEventListener('click', () => bindTab(button));
 })
+buttons.item(0).click();
 
 function bindTab(button: HTMLElement) {
 
@@ -15,6 +16,7 @@ function bindTab(button: HTMLElement) {
 
 	const id: string = button.dataset.targetId;
 	displayedSectionId = id;
+	
 	const section: HTMLElement = document.getElementById(id);
 	section.style.display = 'block';
 }
