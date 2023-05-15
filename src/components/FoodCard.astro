@@ -1,42 +1,8 @@
 ---
-import "../styles/components/FoodCard.less";
-import { FoodCardItem } from "../types/foodCardItem";
-
-interface Props {
-	foodCard: FoodCardItem;
-}
-
-const { foodCard } = Astro.props;
-
-const backgroundImage = "background-image: url(" + foodCard.image + ");";
-
-const allergenUrls = new Map(
-	foodCard.allergens.map((allergen) => [
-		allergen,
-		"/Jovi/allergens/" + allergen + ".png",
-	])
-);
+import '../../src/styles/components/FoodCard.less'
 ---
 
-<div class="foodCard">
-	<div class="image" style={backgroundImage}></div>
-	<div class="info">
-		<h4>{foodCard.title}</h4>
-		<h5>{foodCard.price} €</h5>
-		<p>{foodCard.text}</p>
-		<div>
-			{
-				foodCard.allergens.map((allergen) => (
-					<a href="#allergens">
-						<img
-							class="height"
-							style="--height: 64px"
-							src={allergenUrls.get(allergen)}
-							alt={allergen}
-						/>
-					</a>
-				))
-			}
-		</div>
-	</div>
+<div class="card flex blur-background">
+    <img src="/Jovi/alitas.png" class="card-img" alt="alitas">
+    <h2 class="card-title">Alitas</h2>
 </div>

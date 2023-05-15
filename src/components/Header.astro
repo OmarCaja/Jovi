@@ -1,36 +1,21 @@
 ---
 import "../styles/components/Header.less";
-import { MenuNodeItem } from "../types/menuNodeItem";
+import {MenuNodeItem} from "../types/menuNodeItem";
 
 interface Props {
 	menu: MenuNodeItem[];
-	subMenu?: MenuNodeItem[];
 }
 
-const { menu = [], subMenu = [] } = Astro.props;
-const subMenuAvailable = subMenu.length != 0;
+const {menu} = Astro.props;
 ---
 
-<header class="navigation navigation-blur-blackground">
-	<nav>
-		<a href="/Jovi/"><img class="logo" src='/Jovi/logo.png' alt="Logo" /></a>
+<header class="navigation blur-background">
+    <nav>
+        <a href="/Jovi/"><img class="logo" src='/Jovi/logo.png' alt="Logo"/></a>
 		{
 			menu.map((menuNode) => (
-				<a href={menuNode.url}>{menuNode.name}</a>
+                    <a href={menuNode.url}>{menuNode.name}</a>
 			))
 		}
-	</nav>
-	<div
-		class={subMenuAvailable
-			? "navigation subnavigation navigation-blur-blackground"
-			: ""}
-	>
-		<nav>
-			{
-				subMenu.map((menuNode) => (
-					<a href={menuNode.url}>{menuNode.name}</a>
-				))
-			}
-		</nav>
-	</div>
+    </nav>
 </header>

@@ -12,7 +12,7 @@ const { drinkSection } = Astro.props;
 
 <section id={drinkSection.id} class="drink-section" style="display: none;">
 	<h2>{drinkSection.tittle}</h2>
-	<ul class="flex flex-direction" style="--direction: column">
+	<ul class="flex">
 		{drinkSection.drinks.map((drink) => <Drink drink={drink} />)}
 	</ul>
 </section>

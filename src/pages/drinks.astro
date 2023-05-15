@@ -1,9 +1,29 @@
 ---
 import DrinkSection from "../components/DrinkSection.astro";
-import TabButton from "../components/TabButton.astro";
+import TabButtonsSection from "../components/TabButtonsSection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Drinks.less";
 import { DrinkSectionItem } from "../types/drinkSection";
+import { TabButtonItem } from "../types/tabButtonItem";
+
+const tabButtons: TabButtonItem[] = [
+	{
+		id: "refreshments",
+		title: "Refrescos",
+	},
+	{
+		id: "beers",
+		title: "Cervezas",
+	},
+	{
+		id: "cocktails",
+		title: "Cóscteles",
+	},
+	{
+		id: "Coffees",
+		title: "Cafés",
+	},
+];
 
 const refreshments: DrinkSectionItem = {
 	id: "refreshments",
@@ -108,8 +128,8 @@ const cocktails: DrinkSectionItem = {
 	],
 };
 
-const coffes: DrinkSectionItem = {
-	id: "coffes",
+const Coffees: DrinkSectionItem = {
+	id: "Coffees",
 	tittle: "Cafés",
 	drinks: [
 		{
@@ -140,10 +160,12 @@ const coffes: DrinkSectionItem = {
 ---
 
 <MainLayout pageTittle="Bebidas">
-	<div class="main-section flex justify-content" style="--justify: center">
+	<section
+		class="main-section flex justify-content"
+		style="--justify: center"
+	>
 		<div
 			class="drinks-wrapper flex flex-direction justify-content"
-			style="--direction: column; --justify: center"
 			style="--direction: column; --justify: center"
 		>
 			<div
@@ -151,20 +173,7 @@ const coffes: DrinkSectionItem = {
 				style="--direction:column"
 			>
 				<h1>Bebidas</h1>
-				<ul class="buttons-wrapper flex">
-					<li>
-						<TabButton id="refreshments" title="Refrescos" />
-					</li>
-					<li>
-						<TabButton id="beers" title="Cervezas" />
-					</li>
-					<li>
-						<TabButton id="cocktails" title="Cócteles" />
-					</li>
-					<li>
-						<TabButton id="coffes" title="Cafés" />
-					</li>
-				</ul>
+				<TabButtonsSection tabButtons={tabButtons} />
 				<div
 					class="drinks-section flex flex-direction"
 					style="--direction: column"
@@ -172,9 +181,9 @@ const coffes: DrinkSectionItem = {
 					<DrinkSection drinkSection={refreshments} />
 					<DrinkSection drinkSection={beers} />
 					<DrinkSection drinkSection={cocktails} />
-					<DrinkSection drinkSection={coffes} />
+					<DrinkSection drinkSection={Coffees} />
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </MainLayout>

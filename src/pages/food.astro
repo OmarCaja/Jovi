@@ -1,26 +1,19 @@
 ---
 import FoodSection from "../components/FoodSection.astro";
+import TabButtonsSection from "../components/TabButtonsSection.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Food.less";
 import { FoodSectionItem } from "../types/foodSection";
-import { MenuNodeItem } from "../types/menuNodeItem";
+import { TabButtonItem } from "../types/tabButtonItem";
 
-const subMenu: MenuNodeItem[] = [
+const tabButtons: TabButtonItem[] = [
 	{
-		url: "/Jovi/food/#rations",
-		name: "Raciones",
+		id: "rations",
+		title: "Raciones",
 	},
 	{
-		url: "/Jovi/food/#sandwiches",
-		name: "Sandwiches",
-	},
-	{
-		url: "/Jovi/food/#",
-		name: "Montados",
-	},
-	{
-		url: "/Jovi/food/#rations",
-		name: "Tostas",
+		id: "sandwiches",
+		title: "Sandwiches",
 	},
 ];
 
@@ -95,7 +88,7 @@ const rationsSection: FoodSectionItem = {
 };
 
 const sandwichesSection: FoodSectionItem = {
-	id: "sandwiched",
+	id: "sandwiches",
 	tittle: "Sandwiches",
 	foodCards: [
 		{
@@ -137,12 +130,17 @@ const sandwichesSection: FoodSectionItem = {
 };
 ---
 
-<MainLayout pageTittle="Menú" subMenu={subMenu}>
-	<section class="main-section height" style="--height: 100vh"></section>
-	<div class="flex justify-content" style="--justify: center">
-		<div class="food-wrapper flex flex-direction gap">
-			<FoodSection foodSection={rationsSection} />
-			<FoodSection foodSection={sandwichesSection} />
-		</div>
-	</div>
+<MainLayout pageTittle="Menú">
+	<section
+		class="food-main-section flex justify-content"
+		style="--justify: center"
+	>
+		<section class="food-header">
+			<h1>Menú</h1>
+
+			<TabButtonsSection tabButtons={tabButtons} />
+		</section>
+		<FoodSection foodSection={rationsSection} />
+		<FoodSection foodSection={sandwichesSection} />
+	</section>
 </MainLayout>

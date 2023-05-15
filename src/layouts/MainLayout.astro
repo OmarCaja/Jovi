@@ -6,13 +6,12 @@ import "../styles/layouts/MainLayout.less";
 import { MenuNodeItem } from "../types/menuNodeItem";
 
 interface Props {
-	pageTittle?: string;
-	subMenu?: MenuNodeItem[];
+	pageTittle: string;
 }
 
-const { pageTittle, subMenu } = Astro.props;
+const { pageTittle } = Astro.props;
 
-const fullPageTitlle = pageTittle ? "| " + pageTittle : "";
+const fullPageTitle = pageTittle ? "| " + pageTittle : "";
 
 const menu: MenuNodeItem[] = [
 	{
@@ -57,10 +56,10 @@ const menu: MenuNodeItem[] = [
 			crossorigin="anonymous"
 			referrerPolicy="no-referrer"
 		/>
-		<title>Jovi {fullPageTitlle}</title>
+		<title>Jovi {fullPageTitle}</title>
 	</head>
 	<body>
-		<Header menu={menu} subMenu={subMenu} />
+		<Header menu={menu} />
 		<main class="flex flex-direction gap" style="--gap: 10px; --direction: column">
 			<slot />
 		</main>

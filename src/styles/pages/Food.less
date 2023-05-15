@@ -1,25 +1,31 @@
 @import '../Var.less';
 
-.main-section {
-	background-image: url('/Jovi/menu.jpg');
-}
+.food-main-section {
+	z-index: 0;
+	background-image: url("/Jovi/food/food_background.jpg");
+	background-repeat: repeat;
+	background-size: 500px;
+	flex-direction: column;
 
-.food-wrapper {
-	width: 70%;
-
-	.food-section-tittle {
-		text-transform: uppercase;
-		font-weight: bolder;
-		transform: rotate(270deg);
-		transform-origin: center;
+	* {
+		color: @dark-gray;
 	}
 
-	margin-bottom: 10px;
-}
+	.tab-button {
+		border: 1px solid @dark-gray;
+	}
 
-@media (max-width : @tablet) {
-	.food-wrapper {
-		width: 100%;
+	.tab-button:after {
+		background-color: @pale-pink;
+	}
+
+	.food-header {
+		margin: 61px 0 0 0;
+		padding-top: 100px;
+		padding-bottom: 50px;
+	
+		h1 {
+			text-align: center;
+		}
 	}
 }
-

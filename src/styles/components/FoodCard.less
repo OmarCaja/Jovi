@@ -1,34 +1,36 @@
 @import '../Var.less';
 
-.foodCard {
-	flex: 1 0 21%;
-	background-color: @dark-gray;
-	min-width: 320px;
+.card {
+	background-color: @pale-pink-transparent;
+	width: 320px;
+	height: 450px;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
 
-	.image {
-		background-position: center;
-		aspect-ratio: 4/3;
+	.card-img {
+		width: 270px;
+		z-index: 1;
+		transition: all 1s;
+		position: absolute;
+		top: 10%;
 	}
 
-	.info {
-		padding: 0px 20px;
-	}
-
-	.info>* {
-		margin: 20px 0pX;
-	}
-
-	.info> :last-child {
-		margin: 20px 0px 0px 0px;
-	}
-
-	.icon {
-		margin: 0px 5px 0px 0px;
+	.card-title {
+		transition: all 1s;
+		position: absolute;
+		top: 80%;
 	}
 }
 
-@media (max-width : @tablet) {
-	.foodCard {
-		width: 100%;
+.card:hover {
+	.card-img {
+		top: -15%;
+		transform: scale(1.5);
+	}
+
+	.card-title {
+		top: 55%;
 	}
 }
+

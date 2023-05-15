@@ -1,20 +1,22 @@
 ---
-import FoodCard from "../components/FoodCard.astro";
 import { FoodSectionItem } from "../types/foodSection";
+import FoodCard from "./FoodCard.astro";
+
+import "../styles/components/FoodSection.less";
 
 interface Props {
-	foodSection: FoodSectionItem;
+    foodSection: FoodSectionItem;
 }
 
 const { foodSection } = Astro.props;
 ---
 
-<section id={foodSection.id} class="flex flex-wrap gap">
-	<div
-		class="flex justify-content align-items width"
-		style="--justify: center; --align: center; --width: 120px"
-	>
-		<h2 class="food-section-tittle">{foodSection.tittle}</h2>
-	</div>
-	{foodSection.foodCards.map((foddCard) => <FoodCard foodCard={foddCard} />)}
+<section id={foodSection.id} class="food-section flex" style="display: none">
+    <h2>Sandwiches</h2>
+    <div class="flex flex-wrap gap">
+        <FoodCard />
+        <FoodCard />
+        <FoodCard />
+        <FoodCard />
+    </div>
 </section>

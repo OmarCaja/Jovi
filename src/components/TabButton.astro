@@ -1,18 +1,20 @@
 ---
 import "../styles/components/TabButton.less";
+import { TabButtonItem } from "../types/tabButtonItem";
 
 interface Props {
-	id: string;
-	title: string;
+	tabButton: TabButtonItem;
 }
 
-const { id, title } = Astro.props;
+const { tabButton } = Astro.props;
 ---
 
 <script src="../scripts/components/tabButton.ts"></script>
 
-<button role="button"
-		class="tab-button js-tab-button"
-		data-target-id={id}>
-		{title}
+<button
+	role="button"
+	class="tab-button js-tab-button"
+	data-target-id={tabButton.id}
+>
+	{tabButton.title}
 </button>
