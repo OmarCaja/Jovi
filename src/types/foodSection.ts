@@ -1,7 +1,7 @@
-import { FoodCardItem } from "./foodCardItem";
+import { type FoodCardItem } from './foodCardItem'
 
 export interface FoodSectionItem {
-	id: string;
-	tittle: string;
-	foodCards: FoodCardItem[];
+  id: string
+  title: string
+  foodCards: FoodCardItem[]
 }

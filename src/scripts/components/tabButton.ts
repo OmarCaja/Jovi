@@ -9,7 +9,7 @@ buttons.item(0).click()
 function bindTab (button: HTMLElement): void {
   const displayedSection: HTMLElement = document.getElementById(displayedSectionId)
 
-  if (displayedSection == null) {
+  if (displayedSection != null) {
     displayedSection.style.display = 'none'
   }
 

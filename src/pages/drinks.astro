@@ -1,29 +1,34 @@
 ---
 import DrinkSection from "../components/DrinkSection.astro";
 import TabButtonsSection from "../components/TabButtonsSection.astro";
+import TabButtonsWrapper from "../components/TabButtonsWrapper.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Drinks.less";
 import { DrinkSectionItem } from "../types/drinkSection";
 import { TabButtonItem } from "../types/tabButtonItem";
+import { TabButtonsWrapperItem } from "../types/tabButtonsWrapperItem";
 
-const tabButtons: TabButtonItem[] = [
-	{
-		id: "refreshments",
-		title: "Refrescos",
-	},
-	{
-		id: "beers",
-		title: "Cervezas",
-	},
-	{
-		id: "cocktails",
-		title: "Cóscteles",
-	},
-	{
-		id: "Coffees",
-		title: "Cafés",
-	},
-];
+const tabButtonsWrapper: TabButtonsWrapperItem = {
+	title: "Bebidas",
+	tabButtons: [
+		{
+			id: "refreshments",
+			title: "Refrescos",
+		},
+		{
+			id: "beers",
+			title: "Cervezas",
+		},
+		{
+			id: "cocktails",
+			title: "Cóscteles",
+		},
+		{
+			id: "Coffees",
+			title: "Cafés",
+		},
+	],
+};
 
 const refreshments: DrinkSectionItem = {
 	id: "refreshments",
@@ -168,12 +173,11 @@ const Coffees: DrinkSectionItem = {
 			class="drinks-wrapper flex flex-direction justify-content"
 			style="--direction: column; --justify: center"
 		>
+			<TabButtonsWrapper tabButtonsWrapper={tabButtonsWrapper} />
 			<div
 				class="drinks-section-container blur-background flex flex-direction"
 				style="--direction:column"
 			>
-				<h1>Bebidas</h1>
-				<TabButtonsSection tabButtons={tabButtons} />
 				<div
 					class="drinks-section flex flex-direction"
 					style="--direction: column"

@@ -12,11 +12,12 @@ const { foodSection } = Astro.props;
 ---
 
 <section id={foodSection.id} class="food-section flex" style="display: none">
-    <h2>Sandwiches</h2>
-    <div class="flex flex-wrap gap">
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-    </div>
+    <h2>{foodSection.title}</h2>
+    <lu class="flex flex-wrap gap justify-content" style="--justify: center">
+        {
+            foodSection.foodCards.map((foodCard) => (
+                <FoodCard foodCard={foodCard} />
+            ))
+        }
+    </lu>
 </section>

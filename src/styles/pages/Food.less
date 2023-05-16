@@ -2,10 +2,12 @@
 
 .food-main-section {
 	z-index: 0;
-	background-image: url("/Jovi/food/food_background.jpg");
+	background-image: url("/Jovi/menu/menu_background.jpg");
 	background-repeat: repeat;
 	background-size: 500px;
 	flex-direction: column;
+	background-attachment: fixed;
+	;
 
 	* {
 		color: @dark-gray;
@@ -19,13 +21,17 @@
 		background-color: @pale-pink;
 	}
 
-	.food-header {
-		margin: 61px 0 0 0;
-		padding-top: 100px;
-		padding-bottom: 50px;
+	.food-wrapper {
+		width: 70%;
+	}
+}
+
+@media (max-width : @tablet) {
 	
-		h1 {
-			text-align: center;
+	.food-main-section {
+
+		.food-wrapper {
+			width: 100%;
 		}
 	}
 }

@@ -1,7 +1,7 @@
-import { DrinkItem } from "./drinkItem";
+import { type DrinkItem } from './drinkItem'
 
 export interface DrinkSectionItem {
-	id: string;
-	tittle: string;
-	drinks: DrinkItem[];
+  id: string
+  tittle: string
+  drinks: DrinkItem[]
 }

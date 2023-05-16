@@ -1,146 +1,135 @@
 ---
 import FoodSection from "../components/FoodSection.astro";
 import TabButtonsSection from "../components/TabButtonsSection.astro";
+import TabButtonsWrapper from "../components/TabButtonsWrapper.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Food.less";
 import { FoodSectionItem } from "../types/foodSection";
 import { TabButtonItem } from "../types/tabButtonItem";
+import { TabButtonsWrapperItem } from "../types/tabButtonsWrapperItem";
 
-const tabButtons: TabButtonItem[] = [
-	{
-		id: "rations",
-		title: "Raciones",
-	},
-	{
-		id: "sandwiches",
-		title: "Sandwiches",
-	},
-];
+const tabButtonsWrapper: TabButtonsWrapperItem = {
+	title: "Menú",
+	tabButtons: [
+		{
+			id: "rations",
+			title: "Raciones",
+		},
+		{
+			id: "sandwiches",
+			title: "Sandwiches",
+		},
+	],
+};
 
 const rationsSection: FoodSectionItem = {
 	id: "rations",
-	tittle: "Raciones",
+	title: "Raciones",
 	foodCards: [
 		{
-			title: "Sandwich Jovi",
+			title: "Sandwich Jovi y más cosas",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: [],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: [],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 	],
 };
 
 const sandwichesSection: FoodSectionItem = {
 	id: "sandwiches",
-	tittle: "Sandwiches",
+	title: "Sandwiches",
 	foodCards: [
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: ["celery", "dairy"],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: [],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
-			allergens: [],
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/Jovi/sandwich.jpg",
+			image: "/Jovi/menu/alitas.png",
 		},
 	],
 };
 ---
 
 <MainLayout pageTittle="Menú">
-	<section
-		class="food-main-section flex justify-content"
-		style="--justify: center"
-	>
-		<section class="food-header">
-			<h1>Menú</h1>
-
-			<TabButtonsSection tabButtons={tabButtons} />
-		</section>
-		<FoodSection foodSection={rationsSection} />
-		<FoodSection foodSection={sandwichesSection} />
+	<section class="food-main-section flex align-items" style="--align: center">
+		<div
+			class="food-wrapper flex flex-direction"
+			style="--direction: column"
+		>
+			<TabButtonsWrapper tabButtonsWrapper={tabButtonsWrapper} />
+			<FoodSection foodSection={rationsSection} />
+			<FoodSection foodSection={sandwichesSection} />
+		</div>
 	</section>
 </MainLayout>

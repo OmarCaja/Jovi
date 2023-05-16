@@ -8,29 +8,61 @@
 	flex-direction: column;
 	align-items: center;
 
-	.card-img {
+	h5 {
+		margin: 5px 10px;
+	}
+
+	p {
+		margin: 10px;
+	}
+
+	.img {
 		width: 270px;
 		z-index: 1;
-		transition: all 1s;
+		transition: top 1s, transform 1s;
 		position: absolute;
 		top: 10%;
 	}
 
-	.card-title {
-		transition: all 1s;
+	.title {
+		transition: top 1s;
 		position: absolute;
-		top: 80%;
+		top: 70%;
+	}
+
+	.price {
+		transition: top 1s;
+		position: absolute;
+		top: 80%
+	}
+
+	.description {
+		transition: visibility 1s, opacity 1s linear;
+		position: absolute;
+		top: 75%;
+		opacity: 0;
+		visibility: hidden;
 	}
 }
 
-.card:hover {
-	.card-img {
+.card:hover,
+.card:active {
+	.img {
 		top: -15%;
 		transform: scale(1.5);
 	}
 
-	.card-title {
+	.title {
 		top: 55%;
 	}
-}
 
+	.price {
+		top: 65%;
+	}
+
+	.description {
+		top: 75%;
+		visibility: visible;
+		opacity: 1;
+	}
+}
