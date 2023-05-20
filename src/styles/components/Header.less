@@ -1,10 +1,7 @@
 @import '../Var.less';
 
-header, nav {
-	z-index: 10;
-}
-
 .navigation {
+	z-index: 10;
 	position: fixed;
 	display: flex;
 	justify-content: center;
@@ -14,7 +11,8 @@ header, nav {
 	border-bottom: 1px solid @border-white;
 
 	nav {
-		width: 50%;
+		align-items: center;
+		width: 70%;
 		display: flex;
 		justify-content: space-evenly;
 
@@ -26,6 +24,30 @@ header, nav {
 
 		a:hover {
 			opacity: 1;
+		}
+	}
+}
+
+#mobile-menu {
+	background-color: @transparent-black;
+	height: 100%;
+	width: 100%;
+	z-index: 20;
+	position: fixed;
+	display: none;
+}
+
+@media (max-width : @tablet) {
+
+	.navigation {
+
+		nav {
+			width: 100%;
+			padding: 0px 15px;
+
+			a:not(:first-child) {
+				visibility: hidden;
+			}
 		}
 	}
 }

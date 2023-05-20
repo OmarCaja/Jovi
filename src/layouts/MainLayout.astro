@@ -6,7 +6,7 @@ import "../styles/layouts/MainLayout.less";
 import { MenuNodeItem } from "../types/menuNodeItem";
 
 interface Props {
-	pageTittle: string;
+	pageTittle?: string;
 }
 
 const { pageTittle } = Astro.props;
@@ -33,7 +33,7 @@ const menu: MenuNodeItem[] = [
 	{
 		url: "/Jovi/galery",
 		name: "Galería",
-	}
+	},
 ];
 ---
 
@@ -60,7 +60,10 @@ const menu: MenuNodeItem[] = [
 	</head>
 	<body>
 		<Header menu={menu} />
-		<main class="flex flex-direction gap" style="--gap: 10px; --direction: column">
+		<main
+			class="flex flex-direction gap"
+			style="--gap: 10px; --direction: column"
+		>
 			<slot />
 		</main>
 		<Footer />
