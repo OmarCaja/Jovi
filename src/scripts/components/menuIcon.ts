@@ -6,7 +6,7 @@ menuIcon.addEventListener('click', () => {
 
   if (mobileMenu.style.display === 'flex') {
     mobileMenu.style.display = 'none'
-    body.style.overflow = 'auto'
+    body.style.overflow = 'visible'
   } else {
     mobileMenu.style.display = 'flex'
     body.style.overflow = 'hidden'
