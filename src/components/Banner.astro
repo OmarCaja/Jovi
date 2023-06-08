@@ -4,11 +4,10 @@ import "../styles/components/Banner.less";
 interface Props {
 	title: string;
 	subtitle?: string;
-	text?: string;
 	background?: string;
 }
 
-const { title, subtitle, text, background } = Astro.props;
+const { title, subtitle, background } = Astro.props;
 
 const backgroundImage = "background-image: url(" + background + "); --direction: column; --align: center";
 ---
