@@ -1,6 +1,6 @@
-import { type TabButtonItem } from './tabButtonItem'
+import type { TabButtonItem } from "./tabButtonItem"
 
-export interface TabButtonsWrapperItem {
+export type TabButtonsWrapperItem = {
   title: string
   tabButtons: TabButtonItem[]
 }

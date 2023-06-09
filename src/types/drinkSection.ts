@@ -1,6 +1,6 @@
-import { type DrinkItem } from './drinkItem'
+import type { DrinkItem } from './drinkItem'
 
-export interface DrinkSectionItem {
+export type DrinkSectionItem = {
   id: string
   tittle: string
   drinks: DrinkItem[]

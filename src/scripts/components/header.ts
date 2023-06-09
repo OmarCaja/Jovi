@@ -5,6 +5,6 @@ headerLinks.forEach(button => {
 })
 
 function closeMobileMenu(): void {
-  const mobileMenu: HTMLElement = document.getElementById('mobile-menu')
+  const mobileMenu: HTMLElement = document.getElementById('mobile-menu') as HTMLElement
   mobileMenu.style.display = 'none'
 }

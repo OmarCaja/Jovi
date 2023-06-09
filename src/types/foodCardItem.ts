@@ -1,4 +1,4 @@
-export interface FoodCardItem {
+export type FoodCardItem = {
   title: string
   price: string
   text?: string

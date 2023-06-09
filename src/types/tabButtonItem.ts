@@ -1,4 +1,4 @@
-export interface TabButtonItem {
+export type TabButtonItem = {
   id: string
   title: string
 }
