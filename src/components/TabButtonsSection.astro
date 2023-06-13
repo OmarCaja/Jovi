@@ -1,22 +1,22 @@
 ---
-import type {TabButtonItem} from "../types/tabButtonItem";
+import type { TabButtonItem } from "../types/tabButtonItem";
 import TabButton from "./TabButton.astro";
 
 import "../styles/components/TabButtonsSection.less";
 
 interface Props {
-    tabButtons: TabButtonItem[];
+  tabButtons: TabButtonItem[];
 }
 
-const {tabButtons} = Astro.props;
+const { tabButtons } = Astro.props;
 ---
 
 <ul class="tab-buttons-section flex">
-    {
-        tabButtons.map((tabButton) => (
-                <li>
-                    <TabButton tabButton={tabButton}/>
-                </li>
-        ))
-    }
+  {
+    tabButtons.map((tabButton) => (
+      <li>
+        <TabButton tabButton={tabButton} />
+      </li>
+    ))
+  }
 </ul>

@@ -1,16 +1,29 @@
 ---
+import type { BannerItem } from "~/types/bannerItem";
 import Banner from "../components/Banner.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Index.less";
+
+const cocktailsBanner: BannerItem = {
+	title: "Cócteles",
+	subtitle: "Descubre nuestros cócteles",
+	background: "/Jovi/cocktail.jpg",
+};
+
+const foodBanner: BannerItem = {
+	title: "Tapas",
+	subtitle: "Prueba nuestras tapas",
+	background: "/Jovi/sandwich.jpg",
+};
 ---
 
 <MainLayout>
 	<section
-		class="main-section flex align-items height"
-		style="--align: center; --height: 100vh"
+		class="index-main-section flex align-items height"
+		style="--align: end; --height: 100vh"
 	>
 		<div
-			class="blur-background flex width flex-direction align-items"
+			class="flex width flex-direction align-items"
 			style="--width: 100%; --direction: column; --align: center"
 		>
 			<h1>Taberna Jovi</h1>
@@ -24,16 +37,8 @@ import "../styles/pages/Index.less";
 		class="flex flex-wrap height gap"
 		style="--height: 700px; --gap: 10px"
 	>
-		<Banner
-			title="Cócteles"
-			subtitle="Descubre nuestros cócteles"
-			background="/Jovi/cocktail.jpg"
-		/>
-		<Banner
-			title="Tapas"
-			subtitle="Prueba nuestras tapas"
-			background="/Jovi/sandwich.jpg"
-		/>
+		<Banner banner={cocktailsBanner} />
+		<Banner banner={foodBanner} />
 	</section>
 	<section id="map">
 		<iframe

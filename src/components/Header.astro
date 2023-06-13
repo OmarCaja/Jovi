@@ -14,9 +14,7 @@ const { menu } = Astro.props;
 
 <header class="navigation blur-background">
 	<nav>
-		<a href="/Jovi/"
-			><img class="logo" src="/Jovi/logo.png" alt="Logo" />
-		</a>
+		<a href="/Jovi/"><img class="logo" src="/Jovi/logo.png" alt="Logo" /></a>
 		{menu.map((menuNode) => <a href={menuNode.url}>{menuNode.name}</a>)}
 	</nav>
 </header>
@@ -25,7 +23,7 @@ const { menu } = Astro.props;
 
 <nav
 	id="mobile-menu"
-	class="flex-direction align-items justify-content gap"
+	class="blur-background flex-direction align-items justify-content gap"
 	style="--direction: column; --align: center; --justify: center; --gap: 20px"
 >
 	{

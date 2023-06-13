@@ -5,19 +5,15 @@ import FoodCard from "./FoodCard.astro";
 import "../styles/components/FoodSection.less";
 
 interface Props {
-    foodSection: FoodSectionItem;
+  foodSection: FoodSectionItem;
 }
 
 const { foodSection } = Astro.props;
 ---
 
 <section id={foodSection.id} class="food-section flex" style="display: none">
-    <h2>{foodSection.title}</h2>
-    <lu class="flex flex-wrap gap justify-content" style="--justify: center">
-        {
-            foodSection.foodCards.map((foodCard) => (
-                <FoodCard foodCard={foodCard} />
-            ))
-        }
-    </lu>
+  <h2>{foodSection.title}</h2>
+  <lu class="flex flex-wrap gap justify-content" style="--justify: center">
+    {foodSection.foodCards.map((foodCard) => <FoodCard foodCard={foodCard} />)}
+  </lu>
 </section>

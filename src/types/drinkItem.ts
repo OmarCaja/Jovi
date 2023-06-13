@@ -1,5 +1,5 @@
 export type DrinkItem = {
-	title: string;
-	description?: string;
-	price: string;
+  title: string;
+  description?: string;
+  price: string;
 }
