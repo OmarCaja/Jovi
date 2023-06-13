@@ -12,8 +12,6 @@ RUN curl -o actions-runner-linux-x64-2.304.0.tar.gz -L https://github.com/action
 
 RUN tar xzf ./actions-runner-linux-x64-2.304.0.tar.gz
 
-RUN ./bin/installdependencies.sh
-
 RUN ./config.sh --url https://github.com/OmarCaja/Jovi --token $TOKEN
 
 CMD ["./run.sh"]
