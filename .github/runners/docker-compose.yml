@@ -1,8 +1,0 @@
-version: '3.8'
-services:
-  worker:
-    image: myoung34/github-runner:latest
-    environment:
-      REPO_URL: https://github.com/OmarCaja/Jovi
-      RUNNER_NAME: jovi-runner
-      RUNNER_TOKEN: AIZDRRQELOOCJGG3TFVIDFLERGIGQ
