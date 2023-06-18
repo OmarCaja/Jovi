@@ -2,12 +2,11 @@
 
 .food-main-section {
 	z-index: 0;
-	background-image: url("/Jovi/menu/menu_background.jpg");
+	background-image: url("/Jovi/pages/food/food-background.jpg");
 	background-repeat: repeat;
 	background-size: 500px;
 	flex-direction: column;
 	background-attachment: fixed;
-	;
 
 	* {
 		color: @dark-gray;
@@ -29,6 +28,8 @@
 @media (max-width : @tablet) {
 
 	.food-main-section {
+
+		background-attachment: initial;
 
 		.food-wrapper {
 			width: 100%;
