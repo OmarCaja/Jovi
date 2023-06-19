@@ -1,0 +1,37 @@
+---
+import type { MenuNodeItem } from "../../types/header/menuNodeItem";
+import MenuIcon from "./MenuIcon.astro";
+
+import "../../styles/components/header/Header.less";
+
+interface Props {
+	menu: MenuNodeItem[];
+}
+
+const { menu } = Astro.props;
+---
+
+<script src="../../scripts/components/header.ts"></script>
+
+<header class="navigation blur-background">
+	<nav>
+		<a href="/Jovi/"><img class="logo" src="/Jovi/logo.png" alt="Logo" /></a>
+		{menu.map((menuNode) => <a href={menuNode.url}>{menuNode.name}</a>)}
+	</nav>
+</header>
+
+<MenuIcon />
+
+<nav
+	id="mobile-menu"
+	class="blur-background flex-direction align-items justify-content gap"
+	style="--direction: column; --align: center; --justify: center; --gap: 20px"
+>
+	{
+		menu.map((menuNode) => (
+			<a class="js-mobile-menu-link" href={menuNode.url}>
+				<h4>{menuNode.name}</h4>
+			</a>
+		))
+	}
+</nav>

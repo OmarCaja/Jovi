@@ -1,10 +1,10 @@
 ---
-import FoodSection from "../components/FoodSection.astro";
-import TabButtonsWrapper from "../components/TabButtonsWrapper.astro";
+import FoodSection from "../components/food/FoodSection.astro";
+import TabButtonsWrapper from "../components/buttons/TabButtonsWrapper.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Food.less";
-import type { FoodSectionItem } from "../types/foodSection";
-import type { TabButtonsWrapperItem } from "../types/tabButtonsWrapperItem";
+import type { FoodSectionItem } from "../types/food/foodSection";
+import type { TabButtonsWrapperItem } from "../types/buttons/tabButtonsWrapperItem";
 
 const tabButtonsWrapper: TabButtonsWrapperItem = {
 	title: "Menú",

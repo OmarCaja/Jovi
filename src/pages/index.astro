@@ -1,6 +1,6 @@
 ---
-import type { BannerItem } from "~/types/bannerItem";
-import Banner from "../components/Banner.astro";
+import type { BannerItem } from "~/types/banner/bannerItem";
+import Banner from "../components/banner/Banner.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/pages/Index.less";
 
@@ -8,12 +8,14 @@ const cocktailsBanner: BannerItem = {
 	title: "Cócteles",
 	subtitle: "Descubre nuestros cócteles",
 	background: "/Jovi/cocktail.jpg",
+	url: "/Jovi/drinks",
 };
 
 const foodBanner: BannerItem = {
 	title: "Tapas",
 	subtitle: "Prueba nuestras tapas",
 	background: "/Jovi/sandwich.jpg",
+	url: "/Jovi/food",
 };
 ---
 
@@ -46,7 +48,7 @@ const foodBanner: BannerItem = {
 			width="100%"
 			height="450"
 			style="border: 0"
-			loading="eager"
+			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</section>
 </MainLayout>

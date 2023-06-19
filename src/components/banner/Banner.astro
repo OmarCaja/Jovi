@@ -1,0 +1,21 @@
+---
+import type { BannerItem } from "../../types/banner/bannerItem";
+
+import "../../styles/components/banner/Banner.less";
+
+interface Props {
+  banner: BannerItem;
+}
+
+const { banner } = Astro.props;
+
+const backgroundImage =
+  "background-image: url(" +
+  banner.background +
+  "); --direction: column; --align: center";
+---
+
+<div class="banner flex flex-direction align-items" style={backgroundImage}>
+  <h2>{banner.title}</h2>
+  <h5>{banner.subtitle}</h5>
+</div>

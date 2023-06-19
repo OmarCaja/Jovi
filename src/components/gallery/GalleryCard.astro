@@ -1,0 +1,15 @@
+---
+import type { GalleryCardItem } from "../../types/gallery/galleryCardItem";
+
+import "../../styles/components/gallery/GalleryCard.less";
+
+interface Props {
+	galleryCard: GalleryCardItem;
+}
+
+const { galleryCard } = Astro.props;
+---
+
+<li class="gallery-card">
+	<img src={galleryCard.image} alt="Example image" />
+</li>
