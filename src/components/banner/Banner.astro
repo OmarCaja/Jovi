@@ -14,8 +14,9 @@ const backgroundImage =
   banner.background +
   "); --direction: column; --align: center";
 ---
-
-<div class="banner flex flex-direction align-items" style={backgroundImage}>
-  <h2>{banner.title}</h2>
-  <h5>{banner.subtitle}</h5>
-</div>
+<a href={banner.url} class="banner">
+  <div class="flex flex-direction align-items" style={backgroundImage}>
+    <h2>{banner.title}</h2>
+    <h5>{banner.subtitle}</h5>
+  </div>
+</a>

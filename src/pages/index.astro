@@ -36,8 +36,8 @@ const foodBanner: BannerItem = {
 		</div>
 	</section>
 	<section
-		class="flex flex-wrap height gap"
-		style="--height: 700px; --gap: 10px"
+		class="banner-container flex gap"
+		style="--gap: 10px"
 	>
 		<Banner banner={cocktailsBanner} />
 		<Banner banner={foodBanner} />
@@ -48,7 +48,7 @@ const foodBanner: BannerItem = {
 			width="100%"
 			height="450"
 			style="border: 0"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</section>
 </MainLayout>
