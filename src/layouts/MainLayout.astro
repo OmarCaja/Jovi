@@ -3,10 +3,10 @@ import Header from "../components/header/Header.astro";
 import Footer from "../footer/Footer.astro";
 import "../styles/Var.less";
 import "../styles/layouts/MainLayout.less";
-import type { MenuNodeItem } from "../types/header/menuNodeItem";
+import type { MenuNodeItem } from "../types/node/menuNodeItem";
 
 interface Props {
-	pageTittle?: string;
+  pageTittle?: string;
 }
 
 const { pageTittle } = Astro.props;
@@ -14,58 +14,59 @@ const { pageTittle } = Astro.props;
 const fullPageTitle = pageTittle ? "| " + pageTittle : "";
 
 const menu: MenuNodeItem[] = [
-	{
-		url: "/Jovi/drinks",
-		name: "Bebida",
-	},
-	{
-		url: "/Jovi/food",
-		name: "Menú",
-	},
-	{
-		url: "/Jovi/#map",
-		name: "Dónde estamos",
-	},
-	{
-		url: "/Jovi/#footer",
-		name: "Contacto",
-	},
-	{
-		url: "/Jovi/galery",
-		name: "Galería",
-	},
+  {
+    url: "/Jovi/drinks",
+    name: "Bebida",
+  },
+  {
+    url: "/Jovi/food",
+    name: "Menú",
+  },
+  {
+    url: "/Jovi/#map",
+    name: "Dónde estamos",
+  },
+  {
+    url: "/Jovi/#footer",
+    name: "Contacto",
+  },
+  {
+    url: "/Jovi/galery",
+    name: "Galería",
+  },
 ];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/Jovi/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-			crossorigin="anonymous"
-			referrerPolicy="no-referrer"
-		/>
-		<title>Jovi {fullPageTitle}</title>
-	</head>
-	<body>
-		<Header menu={menu} />
-		<main
-			class="flex flex-direction gap"
-			style="--gap: 10px; --direction: column"
-		>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Jovi/main/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/Jovi/main/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerPolicy="no-referrer"
+    />
+    <title>Jovi {fullPageTitle}</title>
+  </head>
+  <body>
+    <Header menu={menu} />
+    <main
+      class="flex flex-direction gap"
+      style="--gap: 10px; --direction: column"
+    >
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
