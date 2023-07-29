@@ -1,7 +1,7 @@
 ---
 import GalleryCard from "../components/gallery/GalleryCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/pages/Galery.less";
+import "../styles/pages/Gallery.less";
 import type { GalleryCardItem } from "../types/gallery/galleryCardItem";
 
 const galleyImages: GalleryCardItem[] = [
@@ -49,7 +49,7 @@ const galleyImages: GalleryCardItem[] = [
 
 <MainLayout pageTittle="Galería">
 	<section>
-		<ul class="gallery flex flex-wrap">
+		<ul class="gallery grid">
 			{
 				galleyImages.map((galleryImage) => (
 					<GalleryCard galleryCard={galleryImage} />

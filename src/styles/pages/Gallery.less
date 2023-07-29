@@ -1,0 +1,21 @@
+@import '../Var.less';
+
+.gallery {
+	margin-top: 61px;
+	gap: 5px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width : @tablet) {
+	.gallery {
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 0px;
+	}
+}
+
+@media (max-width : @mobile) {
+	.gallery {
+		grid-template-columns: repeat(1, 1fr);
+		margin-top: 0px;
+	}
+}
