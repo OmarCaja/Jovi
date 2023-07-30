@@ -5,6 +5,8 @@ headerLinks.forEach(button => {
 })
 
 function closeMobileMenu(): void {
+  const menuIcon: HTMLElement = document.getElementById('menu-icon-checkbox') as HTMLElement
   const mobileMenu: HTMLElement = document.getElementById('mobile-menu') as HTMLElement
+  menuIcon.click()
   mobileMenu.style.display = 'none'
 }

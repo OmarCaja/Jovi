@@ -6,7 +6,7 @@
 	border: 1px solid @white;
 	cursor: pointer;
 	position: relative;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: @transparent;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
@@ -14,7 +14,9 @@
 
 .tab-button:after {
 	content: "";
-	background-color: rgb(51, 108, 134);
+	background-color: @black-transparent;
+	-webkit-backdrop-filter: saturate(180%) blur(15px);
+	backdrop-filter: saturate(180%) blur(15px);
 	width: 100%;
 	z-index: -1;
 	position: absolute;

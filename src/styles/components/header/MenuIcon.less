@@ -9,7 +9,7 @@
 	height: 50px;
 	cursor: pointer;
 
-	.menu-icon-checkbox {
+	#menu-icon-checkbox {
 		z-index: 10;
 		display: block;
 		width: 100%;
@@ -49,7 +49,7 @@
 	}
 
 	&.active,
-	.menu-icon-checkbox:checked+div {
+	#menu-icon-checkbox:checked+div {
 
 		span {
 			&:first-of-type {
@@ -66,8 +66,8 @@
 
 	&.active:hover span:first-of-type,
 	&.active:hover span:last-of-type,
-	&:hover .menu-icon-checkbox:checked+div span:first-of-type,
-	&:hover .menu-icon-checkbox:checked+div span:last-of-type {
+	&:hover #menu-icon-checkbox:checked+div span:first-of-type,
+	&:hover #menu-icon-checkbox:checked+div span:last-of-type {
 		width: 22px;
 	}
 }
