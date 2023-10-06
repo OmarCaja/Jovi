@@ -1,0 +1,19 @@
+---
+import type { DrinksSectionWrapperItem } from "~/types/drinks/drinksSectionWrapperItem";
+
+import DrinkSection from "~/components/drinks/DrinksSection.astro";
+
+interface Props {
+  drinksSectionWrapper: DrinksSectionWrapperItem;
+}
+
+const { drinksSectionWrapper } = Astro.props;
+---
+
+<ul class="flex flex-direction" style="--direction: column">
+  {
+    drinksSectionWrapper.drinksSection.map((drinkSection) => (
+      <DrinkSection drinkSection={drinkSection} />
+    ))
+  }
+</ul>

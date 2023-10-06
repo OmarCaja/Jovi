@@ -1,8 +1,9 @@
 ---
-import type { TabButtonsWrapperItem } from "../../types/buttons/tabButtonsWrapperItem";
-import TabButtonsSection from "./TabButtonsSection.astro";
+import type { TabButtonsWrapperItem } from "~/types/buttons/tabButtonsWrapperItem";
 
-import "../../../src/styles/components/buttons/TabButtonsWrapper.less";
+import TabButtonsSection from "~/components/buttons/TabButtonsSection.astro";
+
+import "~/styles/components/buttons/TabButtonsWrapper.less";
 
 interface Props {
 	tabButtonsWrapper: TabButtonsWrapperItem;

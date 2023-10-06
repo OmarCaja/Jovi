@@ -4,9 +4,16 @@ let displayedSectionId: string
 buttons.forEach(button => {
   button.addEventListener('click', () => { bindTab(button) })
 })
+
 buttons.item(0).click()
 
-function bindTab (button: HTMLElement): void {
+if (buttons.length == 1) {
+  const tabButtonsSections: HTMLElement = document.getElementById('tab-buttons-section') as HTMLElement
+  tabButtonsSections.style.display = 'none'
+}
+
+
+function bindTab(button: HTMLElement): void {
   const displayedSection: HTMLElement = document.getElementById(displayedSectionId) as HTMLElement
 
   if (displayedSection != null) {

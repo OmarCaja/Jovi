@@ -15,24 +15,60 @@ const fullPageTitle = pageTittle ? "| " + pageTittle : "";
 
 const menu: MenuNodeItem[] = [
   {
-    url: "/drinks",
-    name: "Bebida",
+    url: "#/",
+    name: "Bebidas",
+    subNodes: [
+      {
+        url: "/drinks/refreshments",
+        name: "Refrescos",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/beers",
+        name: "Cervezas",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/liquors",
+        name: "Licores",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/cocktails",
+        name: "Cócteles",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/coffees",
+        name: "Cafés",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/wines",
+        name: "Vinos",
+        subNodes: [],
+      },
+    ],
   },
   {
     url: "/food",
     name: "Menú",
+    subNodes: [],
   },
   {
     url: "/#map",
     name: "Dónde estamos",
+    subNodes: [],
   },
   {
     url: "/#footer",
     name: "Contacto",
+    subNodes: [],
   },
   {
     url: "/gallery",
     name: "Galería",
+    subNodes: [],
   },
 ];
 ---
@@ -40,7 +76,11 @@ const menu: MenuNodeItem[] = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/main/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/main/apple-touch-icon.png"
+    />
     <link rel="icon" type="image/png" href="/main/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -55,7 +95,7 @@ const menu: MenuNodeItem[] = [
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous"
-      referrerPolicy="no-referrer"
+      referrerpolicy="no-referrer"
     />
     <title>Jovi {fullPageTitle}</title>
   </head>

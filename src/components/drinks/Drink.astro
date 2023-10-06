@@ -1,7 +1,7 @@
 ---
-import type { DrinkItem } from "../../types/drinks/drinkItem";
+import type { DrinkItem } from "~/types/drinks/drinkItem";
 
-import "../../styles/components/drinks/Drink.less";
+import "~/styles/components/drinks/Drink.less";
 
 interface Props {
 	drink: DrinkItem;
@@ -12,15 +12,15 @@ const { drink } = Astro.props;
 
 <li class="drink">
 	<div
-		class="neon-underline flex flex-direction justify-content"
+		class="flex flex-direction justify-content"
 		style="--direction: row; --justify: space-between"
 	>
-		<h5>
+		<h6>
 			{drink.title}
-		</h5>
-		<h5>
+		</h6>
+		<h6>
 			{drink.price} €
-		</h5>
+		</h6>
 	</div>
 	<p>{drink.description}</p>
 </li>

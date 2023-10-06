@@ -1,6 +1,6 @@
 import type { DrinkItem } from './drinkItem'
 
-export type DrinkSectionItem = {
+export type DrinksSectionItem = {
   id: string
   tittle: string
   drinks: DrinkItem[]

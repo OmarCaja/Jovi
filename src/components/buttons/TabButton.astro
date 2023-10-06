@@ -1,7 +1,7 @@
 ---
-import type { TabButtonItem } from "../../types/buttons/tabButtonItem";
+import type { TabButtonItem } from "~/types/buttons/tabButtonItem";
 
-import "../../styles/components/buttons/TabButton.less";
+import "~/styles/components/buttons/TabButton.less";
 
 interface Props {
 	tabButton: TabButtonItem;
@@ -10,7 +10,7 @@ interface Props {
 const { tabButton } = Astro.props;
 ---
 
-<script src="../../scripts/components/tabButton.ts"></script>
+<script src="~/scripts/components/tabButton.ts"></script>
 
 <button
 	role="button"

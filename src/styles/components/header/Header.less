@@ -1,5 +1,31 @@
 @import '../../Var.less';
 
+.accordion {
+	input {
+		position: absolute;
+		opacity: 0;
+	}
+
+	label {
+		font-size: 2em;
+		margin: 5px 0px;
+		display: block;
+		cursor: pointer;
+	}
+
+	.content {
+		max-height: 0;
+		margin-left: 20px;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
+
+	input:checked+label+.content {
+		max-height: 300px;
+		margin-top: 20px;
+	}
+}
+
 .navigation {
 	z-index: 10;
 	position: fixed;
@@ -11,19 +37,23 @@
 	border-bottom: 1px solid @border-white;
 
 	nav {
-		align-items: center;
-		width: 70%;
 		display: flex;
-		justify-content: space-evenly;
+		width: 70%;
 
-		a {
+		ul {
+			width: 100%;
 			display: flex;
-			align-items: center;
-			opacity: 0.8;
-		}
+			justify-content: space-evenly;
 
-		a:hover {
-			opacity: 1;
+			li {
+				display: flex;
+				align-items: center;
+				opacity: 0.8;
+			}
+
+			li:hover {
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -35,6 +65,16 @@
 	z-index: 20;
 	position: fixed;
 	display: none;
+
+	>ul {
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+		justify-self: center;
+		gap: 20px;
+		width: 100%;
+		padding: 70px;
+	}
 }
 
 @media (max-width : @tablet) {
@@ -45,10 +85,11 @@
 			width: 100%;
 			padding: 0px 15px;
 
-			a:not(:first-child) {
-				visibility: hidden;
+			ul {
+				li:not(:first-child) {
+					visibility: hidden;
+				}
 			}
 		}
 	}
 }
-

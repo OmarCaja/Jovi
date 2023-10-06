@@ -1,0 +1,24 @@
+@import '../../Var.less';
+
+.drinks-main-section {
+
+	z-index: 0;
+
+	background: #1B1B1D;
+	background: linear-gradient(0deg, #1B1B1D, #000000);
+
+	.tab-button:after {
+		background-color: @gray;
+	}
+}
+
+.drinks-wrapper {
+	width: 70%;
+}
+
+@media (max-width : @tablet) {
+
+	.drinks-wrapper {
+		width: 100%;
+	}
+}

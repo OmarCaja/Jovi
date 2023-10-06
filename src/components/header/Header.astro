@@ -1,8 +1,9 @@
 ---
-import type { MenuNodeItem } from "../../types/node/menuNodeItem";
-import MenuIcon from "./MenuIcon.astro";
+import type { MenuNodeItem } from "~/types/node/menuNodeItem";
 
-import "../../styles/components/header/Header.less";
+import HamburgerMenu from "./HamburgerMenu.astro";
+
+import "~/styles/components/header/Header.less";
 
 interface Props {
 	menu: MenuNodeItem[];
@@ -11,27 +12,62 @@ interface Props {
 const { menu } = Astro.props;
 ---
 
-<script src="../../scripts/components/header.ts"></script>
+<script src="~/scripts/components/header.ts"></script>
 
 <header class="navigation blur-background">
 	<nav>
-		<a href="/"><img class="logo" src="/main/logo.png" alt="Logo" /></a>
-		{menu.map((menuNode) => <a href={menuNode.url}>{menuNode.name}</a>)}
+		<ul>
+			<li>
+				<a href="/"><img class="logo" src="/main/logo.png" alt="Logo" /></a>
+			</li>
+			{
+				menu.map((menuNode) => (
+					<li>
+						{menuNode.subNodes.length > 0 ? (
+						<a href={menuNode.url}>{menuNode.name}</a>
+						) : (
+						<a href={menuNode.url}>{menuNode.name}</a>
+						)}
+					</li>
+				))
+			}
+		</ul>
 	</nav>
 </header>
 
-<MenuIcon />
+<HamburgerMenu />
 
-<nav
-	id="mobile-menu"
-	class="blur-background flex-direction align-items justify-content gap"
-	style="--direction: column; --align: center; --justify: center; --gap: 20px"
->
-	{
-		menu.map((menuNode) => (
-			<a class="js-mobile-menu-link" href={menuNode.url}>
-				<h4>{menuNode.name}</h4>
-			</a>
-		))
-	}
+<nav id="mobile-menu" class="blur-background">
+	<ul>
+		{
+			menu.map((menuNode) => (
+				<li>
+					{menuNode.subNodes.length > 0 ? (
+						<div class="accordion">
+							<input type="checkbox" id={menuNode.name} />
+							<label for={menuNode.name}>{menuNode.name}</label>
+							<div class="content">
+								<ul
+									class="flex flex-direction gap"
+									style="--direction: column; --gap: 10px"
+								>
+									{menuNode.subNodes.map((subNode) => (
+										<li>
+											<a class="js-mobile-menu-link" href={subNode.url}>
+												<h5>{subNode.name}</h5>
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					) : (
+						<a class="js-mobile-menu-link" href={menuNode.url}>
+							<h4>{menuNode.name}</h4>
+						</a>
+					)}
+				</li>
+			))
+		}
+	</ul>
 </nav>

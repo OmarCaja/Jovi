@@ -1,6 +1,8 @@
 @import '../../Var.less';
 
 .drink-section {
+	margin-bottom: 100px;
+  padding: 80px;
 	flex-direction: column;
 
 	ul {
@@ -8,4 +10,12 @@
 		margin-top: 10px;
 		gap: 20px;
 	}
+}
+
+@media (max-width : @tablet) {
+
+  .drink-section {
+    margin-bottom: 50px;
+    padding: 30px;
+  }
 }
