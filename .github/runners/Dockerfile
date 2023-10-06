@@ -1,9 +1,9 @@
-FROM debian:buster
+FROM debian:latest
 
 ARG TOKEN=not-set
 ARG VERSION=not-set
 
-RUN apt-get update \
+RUN apt-get update\
     && apt-get install -y \
     curl \
     tar \
@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g yarn
+RUN npm install -g yarn 
 
 ENV RUNNER_ALLOW_RUNASROOT=1
 
