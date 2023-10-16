@@ -1,14 +1,14 @@
 ---
-import type { DrinksPageItem } from "~/types/drinks/drinksPageItem";
+import type { DrinksPageItem } from "@types/drinks/drinksPageItem";
 
-import TabButtonsWrapper from "~/components/buttons/TabButtonsWrapper.astro";
-import DrinksSectionWrapper from "~/components/drinks/DrinksSectionWrapper.astro";
-import MainLayout from "~/layouts/MainLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 
-import "~/styles/pages/drinks/Drinks.less";
+import TabButtonsWrapper from "@components/buttons/TabButtonsWrapper.astro";
+import DrinksSectionWrapper from "@components/drinks/DrinksSectionWrapper.astro";
+
+import "@styles/pages/drinks/Drinks.less";
 
 export async function getStaticPaths() {
-  
   const pages: DrinksPageItem[] = [
     {
       drink: "refreshments",
@@ -121,14 +121,10 @@ export async function getStaticPaths() {
               },
               {
                 title: "Estrella Galicia",
-                price: "4,50",
-              },
-              {
-                title: "Mahou 5 esrtrellas",
                 price: "3,50",
               },
               {
-                title: "Cerveza",
+                title: "Mahou 5 esrtrellas",
                 price: "3,50",
               },
               {
@@ -525,7 +521,7 @@ export async function getStaticPaths() {
           },
           {
             id: "whisky",
-            tittle: "Whisky",
+            tittle: "Whiskies",
             drinks: [
               {
                 title: "Glenfiddich 12",

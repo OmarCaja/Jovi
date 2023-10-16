@@ -1,9 +1,9 @@
 ---
-import type { MenuNodeItem } from "~/types/node/menuNodeItem";
+import type { MenuNodeItem } from "@types/node/menuNodeItem";
 
-import HamburgerMenu from "./HamburgerMenu.astro";
+import HamburgerMenu from "@components/header/HamburgerMenu.astro";
 
-import "~/styles/components/header/Header.less";
+import "@styles/components/header/Header.less";
 
 interface Props {
 	menu: MenuNodeItem[];
@@ -12,13 +12,13 @@ interface Props {
 const { menu } = Astro.props;
 ---
 
-<script src="~/scripts/components/header.ts"></script>
+<script src="@scripts/components/header.ts"></script>
 
 <header class="navigation blur-background">
 	<nav>
 		<ul>
 			<li>
-				<a href="/"><img class="logo" src="/main/logo.png" alt="Logo" /></a>
+				<a href="/"><img class="logo" src="/logo.png" alt="Logo" /></a>
 			</li>
 			{
 				menu.map((menuNode) => (

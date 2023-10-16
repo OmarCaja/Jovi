@@ -1,8 +1,9 @@
 ---
-import type { FoodSectionItem } from "../../types/food/foodSection";
-import FoodCard from "./FoodCard.astro";
+import type { FoodSectionItem } from "@types/food/foodSection";
 
-import "../../styles/components/food/FoodSection.less";
+import FoodCard from "@components/food/FoodCard.astro";
+
+import "@styles/components/food/FoodSection.less";
 
 interface Props {
   foodSection: FoodSectionItem;

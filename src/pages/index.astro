@@ -1,20 +1,22 @@
 ---
-import type { BannerItem } from "~/types/banner/bannerItem";
-import Banner from "../components/banner/Banner.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/pages/Index.less";
+import type { BannerItem } from "@types/banner/bannerItem";
+
+import Banner from "@components/banner/Banner.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+
+import "@styles/pages/Index.less";
 
 const cocktailsBanner: BannerItem = {
 	title: "Cócteles",
 	subtitle: "Descubre nuestros cócteles",
-	background: "/cocktail.jpg",
+	background: "/index/cocktail.jpg",
 	url: "/drinks/cocktails",
 };
 
 const foodBanner: BannerItem = {
 	title: "Tapas",
 	subtitle: "Prueba nuestras tapas",
-	background: "/sandwich.jpg",
+	background: "/index/sandwich.jpg",
 	url: "/food",
 };
 ---
@@ -30,14 +32,12 @@ const foodBanner: BannerItem = {
 		>
 			<h1>Taberna Jovi</h1>
 			<p>
-				Pub tradicional de estilo inglés ubicado en el centro histórico de Cuenca desde los años 70.
+				Pub tradicional de estilo inglés ubicado en el centro histórico de
+				Cuenca desde los años 70.
 			</p>
 		</div>
 	</section>
-	<section
-		class="banner-container flex flex-wrap gap"
-		style="--gap: 10px"
-	>
+	<section class="banner-container flex flex-wrap gap" style="--gap: 10px">
 		<Banner banner={cocktailsBanner} />
 		<Banner banner={foodBanner} />
 	</section>

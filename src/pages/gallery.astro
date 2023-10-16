@@ -1,24 +1,26 @@
 ---
-import GalleryCard from "../components/gallery/GalleryCard.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/pages/Gallery.less";
-import type { GalleryCardItem } from "../types/gallery/galleryCardItem";
+import type { GalleryCardItem } from "@types/gallery/galleryCardItem";
+
+import MainLayout from "@layouts/MainLayout.astro";
+import GalleryCard from "@components/gallery/GalleryCard.astro";
+
+import "@styles/pages/Gallery.less";
 
 const galleyImages: GalleryCardItem[] = [
 	{
-		image: "/pages/gallery/1.jpg",
+		image: "/gallery/1.jpg",
 	},
 	{
-		image: "/pages/gallery/2.jpg",
+		image: "/gallery/2.jpg",
 	},
 	{
-		image: "/pages/gallery/3.jpg",
+		image: "/gallery/3.jpg",
 	},
 	{
-		image: "/pages/gallery/4.jpg",
+		image: "/gallery/4.jpg",
 	},
 	{
-		image: "/pages/gallery/5.jpg",
+		image: "/gallery/5.jpg",
 	}
 ];
 ---

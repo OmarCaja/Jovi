@@ -1,7 +1,7 @@
 ---
-import type { FoodCardItem } from "../../types/food/foodCardItem";
+import type { FoodCardItem } from "@types/food/foodCardItem";
 
-import "../../../src/styles/components/food/FoodCard.less";
+import "@styles/components/food/FoodCard.less";
 
 interface Props {
   foodCard: FoodCardItem;
@@ -11,7 +11,7 @@ const { foodCard } = Astro.props;
 ---
 
 <li class="card flex blur-background">
-  <img src={foodCard.image} class="img" alt="alitas" />
+  <img src={foodCard.image} class="img" alt={foodCard.title} />
   <h5 class="title">{foodCard.title}</h5>
   <h5 class="price">{foodCard.price} €</h5>
   <p class="description">{foodCard.text}</p>

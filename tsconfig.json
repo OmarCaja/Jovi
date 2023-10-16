@@ -5,6 +5,24 @@
     "paths": {
       "~/*": [
         "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@scripts/*": [
+        "src/scripts/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@types/*": [
+        "src/types/*"
       ]
     },
   }

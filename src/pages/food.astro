@@ -1,10 +1,12 @@
 ---
-import FoodSection from "../components/food/FoodSection.astro";
-import TabButtonsWrapper from "../components/buttons/TabButtonsWrapper.astro";
-import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/pages/Food.less";
-import type { FoodSectionItem } from "../types/food/foodSection";
-import type { TabButtonsWrapperItem } from "../types/buttons/tabButtonsWrapperItem";
+import type { FoodSectionItem } from "@types/food/foodSection";
+import type { TabButtonsWrapperItem } from "@types/buttons/tabButtonsWrapperItem";
+
+import MainLayout from "@layouts/MainLayout.astro";
+import FoodSection from "@components/food/FoodSection.astro";
+import TabButtonsWrapper from "@components/buttons/TabButtonsWrapper.astro";
+
+import "@styles/pages/Food.less";
 
 const tabButtonsWrapper: TabButtonsWrapperItem = {
 	title: "Menú",
@@ -28,55 +30,55 @@ const rationsSection: FoodSectionItem = {
 			title: "Sandwich Jovi y más cosas",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 	],
 };
@@ -89,31 +91,31 @@ const sandwichesSection: FoodSectionItem = {
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 		{
 			title: "Sandwich Jovi",
 			price: "2,20",
 			text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero velit eos accusamus officiis quae.",
-			image: "/components/food/foodcard/wings.png",
+			image: "/food/wings.png",
 		},
 	],
 };
@@ -121,10 +123,7 @@ const sandwichesSection: FoodSectionItem = {
 
 <MainLayout pageTittle="Menú">
 	<section class="food-main-section flex align-items" style="--align: center">
-		<div
-			class="food-wrapper flex flex-direction"
-			style="--direction: column"
-		>
+		<div class="food-wrapper flex flex-direction" style="--direction: column">
 			<TabButtonsWrapper tabButtonsWrapper={tabButtonsWrapper} />
 			<FoodSection foodSection={rationsSection} />
 			<FoodSection foodSection={sandwichesSection} />
