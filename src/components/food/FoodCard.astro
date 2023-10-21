@@ -12,7 +12,7 @@ const { foodCard } = Astro.props;
 
 <li class="card flex blur-background">
   <img src={foodCard.image} class="img" alt={foodCard.title} />
-  <h5 class="title">{foodCard.title}</h5>
-  <h5 class="price">{foodCard.price} €</h5>
+  <h6 class="title">{foodCard.title}</h6>
+  <h6 class="price">{foodCard.price} €</h6>
   <p class="description">{foodCard.text}</p>
 </li>
