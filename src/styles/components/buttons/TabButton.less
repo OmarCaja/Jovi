@@ -1,32 +1,32 @@
-@import '../../Var.less';
+@import "../../Var.less";
 
 .tab-button {
-	padding: 13px 20px 13px;
-	outline: 0;
-	border: 1px solid @white;
-	cursor: pointer;
-	position: relative;
-	background-color: @transparent;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid @white;
+  cursor: pointer;
+  position: relative;
+  background-color: @transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .tab-button:after {
-	content: "";
-	background-color: @black-transparent;
-	-webkit-backdrop-filter: saturate(180%) blur(15px);
-	backdrop-filter: saturate(180%) blur(15px);
-	width: 100%;
-	z-index: -1;
-	position: absolute;
-	height: 100%;
-	top: 7px;
-	left: 7px;
-	transition: 0.2s;
+  content: "";
+  background-color: @black-transparent;
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+  backdrop-filter: saturate(180%) blur(15px);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
 }
 
 .tab-button:hover:after {
-	top: 0;
-	left: 0;
+  top: 0;
+  left: 0;
 }

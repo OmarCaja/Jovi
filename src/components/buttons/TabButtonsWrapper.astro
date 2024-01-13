@@ -1,18 +1,18 @@
 ---
-import type { TabButtonsWrapperItem } from "@types/buttons/tabButtonsWrapperItem";
+import type { TabButtonsWrapperItem } from "@customTypes/buttons/tabButtonsWrapperItem";
 
 import TabButtonsSection from "@components/buttons/TabButtonsSection.astro";
 
 import "@styles/components/buttons/TabButtonsWrapper.less";
 
 interface Props {
-	tabButtonsWrapper: TabButtonsWrapperItem;
+  tabButtonsWrapper: TabButtonsWrapperItem;
 }
 
 const { tabButtonsWrapper } = Astro.props;
 ---
 
 <section class="tab-buttons-wrapper">
-	<h1>{tabButtonsWrapper.title}</h1>
-	<TabButtonsSection tabButtons={tabButtonsWrapper.tabButtons} />
+  <h1>{tabButtonsWrapper.title}</h1>
+  <TabButtonsSection tabButtons={tabButtonsWrapper.tabButtons} />
 </section>

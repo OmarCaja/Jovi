@@ -1,5 +1,5 @@
 export type MenuNodeItem = {
-	url: string;
-	name: string;
-	subNodes: MenuNodeItem[];
-}
+  url: string;
+  name: string;
+  subNodes: MenuNodeItem[];
+};

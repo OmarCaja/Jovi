@@ -1,6 +1,6 @@
 ---
-import type { FoodSectionItem } from "@types/food/foodSection";
-import type { TabButtonsWrapperItem } from "@types/buttons/tabButtonsWrapperItem";
+import type { FoodSectionItem } from "@customTypes/food/foodSection";
+import type { TabButtonsWrapperItem } from "@customTypes/buttons/tabButtonsWrapperItem";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import FoodSection from "@components/food/FoodSection.astro";
@@ -9,190 +9,190 @@ import TabButtonsWrapper from "@components/buttons/TabButtonsWrapper.astro";
 import "@styles/pages/Food.less";
 
 const tabButtonsWrapper: TabButtonsWrapperItem = {
-	title: "Menú",
-	tabButtons: [
-		{
-			id: "rations",
-			title: "Raciones",
-		},
-		{
-			id: "sandwiches",
-			title: "Sandwiches",
-		},
-		{
-			id: "snacks",
-			title: "Montados",
-		},
-		{
-			id: "toasts",
-			title: "Tostas",
-		},
-	],
+  title: "Menú",
+  tabButtons: [
+    {
+      id: "rations",
+      title: "Raciones",
+    },
+    {
+      id: "sandwiches",
+      title: "Sandwiches",
+    },
+    {
+      id: "snacks",
+      title: "Montados",
+    },
+    {
+      id: "toasts",
+      title: "Tostas",
+    },
+  ],
 };
 
 const rationsSection: FoodSectionItem = {
-	id: "rations",
-	title: "Raciones",
-	foodCards: [
-		{
-			title: "Bonito en escabeche con tomate",
-			price: "13,00",
-			text: "Alérgenos: pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Boquerones en vinagre",
-			price: "9,50",
-			text: "Alérgenos: pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Boquerones en vinagre y anchoas de Santoña",
-			price: "14,00",
-			text: "Alérgenos: pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Croquetas",
-			price: "11,00",
-			text: "Alérgenos: gluten, huevos, lácteos y pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Dátiles con beicon",
-			price: "10,00",
-			text: "",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Pisto con magro",
-			price: "11,00",
-			text: "",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Revuelto de setas con jamón",
-			price: "14,00",
-			text: "Alérgenos: huevo y lácteos",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Salchichas con beicon",
-			price: "10,00",
-			text: "",
-			image: "/food/wings.png",
-		}
-	],
+  id: "rations",
+  title: "Raciones",
+  foodCards: [
+    {
+      title: "Bonito en escabeche con tomate",
+      price: "13,00",
+      text: "Alérgenos: pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Boquerones en vinagre",
+      price: "9,50",
+      text: "Alérgenos: pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Boquerones en vinagre y anchoas de Santoña",
+      price: "14,00",
+      text: "Alérgenos: pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Croquetas",
+      price: "11,00",
+      text: "Alérgenos: gluten, huevos, lácteos y pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Dátiles con beicon",
+      price: "10,00",
+      text: "",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Pisto con magro",
+      price: "11,00",
+      text: "",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Revuelto de setas con jamón",
+      price: "14,00",
+      text: "Alérgenos: huevo y lácteos",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Salchichas con beicon",
+      price: "10,00",
+      text: "",
+      image: "/food/wings.png",
+    },
+  ],
 };
 
 const sandwichesSection: FoodSectionItem = {
-	id: "sandwiches",
-	title: "Sandwiches",
-	foodCards: [
-		{
-			title: "Mixto",
-			price: "5,00",
-			text: "Queso y jamón york. Alérgenos: gluten y lácteos",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Antonio chicote",
-			price: "5,50",
-			text: "Queso, jamón york y huevo revuelto. Alérgenos: gluten, huevo y lácteos",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Jovi",
-			price: "4,50",
-			text: "Pollo, salsa rosa y tomate. Alérgenos: gluten, huevo y soja",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Salmón",
-			price: "6,00",
-			text: "Salmón ahumado, huevo revuelto y queso. Alérgenos: gluten, huevo, lácteos y pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Tomate con queso y anchoas",
-			price: "5,50",
-			text: "Alérgenos: gluten, lácteos y pescado",
-			image: "/food/wings.png",
-		},
-	],
+  id: "sandwiches",
+  title: "Sandwiches",
+  foodCards: [
+    {
+      title: "Mixto",
+      price: "5,00",
+      text: "Queso y jamón york. Alérgenos: gluten y lácteos",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Antonio chicote",
+      price: "5,50",
+      text: "Queso, jamón york y huevo revuelto. Alérgenos: gluten, huevo y lácteos",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Jovi",
+      price: "4,50",
+      text: "Pollo, salsa rosa y tomate. Alérgenos: gluten, huevo y soja",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Salmón",
+      price: "6,00",
+      text: "Salmón ahumado, huevo revuelto y queso. Alérgenos: gluten, huevo, lácteos y pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Tomate con queso y anchoas",
+      price: "5,50",
+      text: "Alérgenos: gluten, lácteos y pescado",
+      image: "/food/wings.png",
+    },
+  ],
 };
 
 const snacksSection: FoodSectionItem = {
-	id: "snacks",
-	title: "Montados",
-	foodCards: [
-		{
-			title: "Lomo",
-			price: "4,50",
-			text: "Alérgenos: gluten",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Jamón",
-			price: "4,50",
-			text: "Alérgenos: gluten",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Beicon con queso",
-			price: "4,50",
-			text: "Alérgenos: gluten y lácteos",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Bonito en escabeche con tomate",
-			price: "4,50",
-			text: "Alérgenos: gluten y pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Boquerón y achoa",
-			price: "4,50",
-			text: "Alérgenos: gluten y pescado",
-			image: "/food/wings.png",
-		},
-	],
+  id: "snacks",
+  title: "Montados",
+  foodCards: [
+    {
+      title: "Lomo",
+      price: "4,50",
+      text: "Alérgenos: gluten",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Jamón",
+      price: "4,50",
+      text: "Alérgenos: gluten",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Beicon con queso",
+      price: "4,50",
+      text: "Alérgenos: gluten y lácteos",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Bonito en escabeche con tomate",
+      price: "4,50",
+      text: "Alérgenos: gluten y pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Boquerón y achoa",
+      price: "4,50",
+      text: "Alérgenos: gluten y pescado",
+      image: "/food/wings.png",
+    },
+  ],
 };
 
 const toastsSection: FoodSectionItem = {
-	id: "toasts",
-	title: "Tostas",
-	foodCards: [
-	{
-			title: "Queso azul con anchoa",
-			price: "4,50",
-			text: "Alérgenos: gluten, lácteos y pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Salmón ahumado",
-			price: "4,00",
-			text: "Alérgenos: gluten y pescado",
-			image: "/food/wings.png",
-		},
-		{
-			title: "Boquerón y achoa",
-			price: "4,00",
-			text: "Alérgenos: gluten y pescado",
-			image: "/food/wings.png",
-		},
-	],
+  id: "toasts",
+  title: "Tostas",
+  foodCards: [
+    {
+      title: "Queso azul con anchoa",
+      price: "4,50",
+      text: "Alérgenos: gluten, lácteos y pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Salmón ahumado",
+      price: "4,00",
+      text: "Alérgenos: gluten y pescado",
+      image: "/food/wings.png",
+    },
+    {
+      title: "Boquerón y achoa",
+      price: "4,00",
+      text: "Alérgenos: gluten y pescado",
+      image: "/food/wings.png",
+    },
+  ],
 };
 ---
 
 <MainLayout pageTittle="Menú">
-	<section class="food-main-section flex align-items" style="--align: center">
-		<div class="food-wrapper flex flex-direction" style="--direction: column">
-			<TabButtonsWrapper tabButtonsWrapper={tabButtonsWrapper} />
-			<FoodSection foodSection={rationsSection} />
-			<FoodSection foodSection={sandwichesSection} />
-			<FoodSection foodSection={snacksSection} />
-			<FoodSection foodSection={toastsSection} />			
-		</div>
-	</section>
+  <section class="food-main-section flex align-items" style="--align: center">
+    <div class="food-wrapper flex flex-direction" style="--direction: column">
+      <TabButtonsWrapper tabButtonsWrapper={tabButtonsWrapper} />
+      <FoodSection foodSection={rationsSection} />
+      <FoodSection foodSection={sandwichesSection} />
+      <FoodSection foodSection={snacksSection} />
+      <FoodSection foodSection={toastsSection} />
+    </div>
+  </section>
 </MainLayout>

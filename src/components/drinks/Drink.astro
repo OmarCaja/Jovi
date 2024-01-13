@@ -1,26 +1,26 @@
 ---
-import type { DrinkItem } from "@types/drinks/drinkItem";
+import type { DrinkItem } from "@customTypes/drinks/drinkItem";
 
 import "@styles/components/drinks/Drink.less";
 
 interface Props {
-	drink: DrinkItem;
+  drink: DrinkItem;
 }
 
 const { drink } = Astro.props;
 ---
 
 <li class="drink">
-	<div
-		class="flex flex-direction justify-content"
-		style="--direction: row; --justify: space-between"
-	>
-		<h6>
-			{drink.title}
-		</h6>
-		<h6>
-			{drink.price} €
-		</h6>
-	</div>
-	<p>{drink.description}</p>
+  <div
+    class="flex flex-direction justify-content"
+    style="--direction: row; --justify: space-between"
+  >
+    <h6>
+      {drink.title}
+    </h6>
+    <h6>
+      {drink.price} €
+    </h6>
+  </div>
+  <p>{drink.description}</p>
 </li>

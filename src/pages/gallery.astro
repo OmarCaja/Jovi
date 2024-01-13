@@ -1,5 +1,5 @@
 ---
-import type { GalleryCardItem } from "@types/gallery/galleryCardItem";
+import type { GalleryCardItem } from "@customTypes/gallery/galleryCardItem";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import GalleryCard from "@components/gallery/GalleryCard.astro";
@@ -7,32 +7,32 @@ import GalleryCard from "@components/gallery/GalleryCard.astro";
 import "@styles/pages/Gallery.less";
 
 const galleyImages: GalleryCardItem[] = [
-	{
-		image: "/gallery/1.jpg",
-	},
-	{
-		image: "/gallery/2.jpg",
-	},
-	{
-		image: "/gallery/3.jpg",
-	},
-	{
-		image: "/gallery/4.jpg",
-	},
-	{
-		image: "/gallery/5.jpg",
-	}
+  {
+    image: "/gallery/1.jpg",
+  },
+  {
+    image: "/gallery/2.jpg",
+  },
+  {
+    image: "/gallery/3.jpg",
+  },
+  {
+    image: "/gallery/4.jpg",
+  },
+  {
+    image: "/gallery/5.jpg",
+  },
 ];
 ---
 
 <MainLayout pageTittle="Galería">
-	<section>
-		<ul class="gallery grid">
-			{
-				galleyImages.map((galleryImage) => (
-					<GalleryCard galleryCard={galleryImage} />
-				))
-			}
-		</ul>
-	</section>
+  <section>
+    <ul class="gallery grid">
+      {
+        galleyImages.map((galleryImage) => (
+          <GalleryCard galleryCard={galleryImage} />
+        ))
+      }
+    </ul>
+  </section>
 </MainLayout>

@@ -1,12 +1,12 @@
 ---
-import type { MenuNodeItem } from "@types/node/menuNodeItem";
+import type { MenuNodeItem } from "@customTypes/node/menuNodeItem";
 
 import HamburgerMenu from "@components/header/HamburgerMenu.astro";
 
 import "@styles/components/header/Header.less";
 
 interface Props {
-	menu: MenuNodeItem[];
+  menu: MenuNodeItem[];
 }
 
 const { menu } = Astro.props;
@@ -14,60 +14,79 @@ const { menu } = Astro.props;
 
 <script src="@scripts/components/header.ts"></script>
 
-<header class="navigation blur-background">
-	<nav>
-		<ul>
-			<li>
-				<a href="/"><img class="logo" src="/logo.png" alt="Logo" /></a>
-			</li>
-			{
-				menu.map((menuNode) => (
-					<li>
-						{menuNode.subNodes.length > 0 ? (
-						<a href={menuNode.url}>{menuNode.name}</a>
-						) : (
-						<a href={menuNode.url}>{menuNode.name}</a>
-						)}
-					</li>
-				))
-			}
-		</ul>
-	</nav>
+<header>
+  <div class="navigation-wrapper blur-background">
+    <nav>
+      <ul>
+        <li>
+          <a href="/"><img class="logo" src="/logo.png" alt="Logo" /></a>
+        </li>
+        {
+          menu.map((menuNode: MenuNodeItem) => (
+            <li>
+              <a id={menuNode.name} class="parent-node" href={menuNode.url}>
+                {menuNode.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+  <div
+    id="children-nav-bar"
+    class="navigation-wrapper children-nodes blur-background"
+    style="visibility: hidden; opacity: 0"
+  >
+    <nav>
+      {
+        menu.map((menuNode: MenuNodeItem) => (
+          <ul id={"childrenNode-" + menuNode.name} class="children-node">
+            {menuNode.subNodes.map((subNode) => (
+              <li>
+                <a href={subNode.url}>{subNode.name}</a>
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </nav>
+  </div>
 </header>
 
 <HamburgerMenu />
 
 <nav id="mobile-menu" class="blur-background">
-	<ul>
-		{
-			menu.map((menuNode) => (
-				<li>
-					{menuNode.subNodes.length > 0 ? (
-						<div class="accordion">
-							<input type="checkbox" id={menuNode.name} />
-							<label for={menuNode.name}>{menuNode.name}</label>
-							<div class="content">
-								<ul
-									class="flex flex-direction gap"
-									style="--direction: column; --gap: 10px"
-								>
-									{menuNode.subNodes.map((subNode) => (
-										<li>
-											<a class="js-mobile-menu-link" href={subNode.url}>
-												<h5>{subNode.name}</h5>
-											</a>
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					) : (
-						<a class="js-mobile-menu-link" href={menuNode.url}>
-							<h4>{menuNode.name}</h4>
-						</a>
-					)}
-				</li>
-			))
-		}
-	</ul>
+  <ul>
+    {
+      menu.map((menuNode: MenuNodeItem) => (
+        <li>
+          {menuNode.subNodes.length > 0 ? (
+            <div class="accordion">
+              <input type="checkbox" id={"mobile-" + menuNode.name} />
+              <label for={"mobile-" + menuNode.name}>{menuNode.name}</label>
+              <div class="content">
+                <ul
+                  class="flex flex-direction gap"
+                  style="--direction: column; --gap: 10px"
+                >
+                  {menuNode.subNodes.map((subNode) => (
+                    <li>
+                      <a class="js-mobile-menu-link" href={subNode.url}>
+                        <h5>{subNode.name}</h5>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <a class="js-mobile-menu-link" href={menuNode.url}>
+              <h4>{menuNode.name}</h4>
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
 </nav>
