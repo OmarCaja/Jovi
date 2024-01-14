@@ -1,0 +1,29 @@
+---
+import Head from "@components/Head.astro";
+import Footer from "@components/footer/Footer.astro";
+import Header from "@components/header/Header.astro";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<'blog'>['data']
+
+const { title, description, author } = Astro.props;
+---
+
+<html lang="en">
+  <Head pageTittle={title} />
+  <body>
+    <Header />
+    <main
+      class="flex flex-direction gap"
+      style="--gap: 10px; --direction: column" 
+    >
+      <article>
+        <h1>{title}</h1>
+        <h2>Post author: {author}</h2>
+        <p>{description}</p>
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

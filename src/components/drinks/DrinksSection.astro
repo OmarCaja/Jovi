@@ -1,10 +1,10 @@
 ---
 import type { DrinksSectionItem } from "@customTypes/drinks/drinksSectionItem";
+import type { DrinkItem } from "@customTypes/drinks/drinkItem";
 
 import Drink from "@components/drinks/Drink.astro";
 
 import "@styles/components/drinks/DrinkSection.less";
-import type { DrinkItem } from "~/types/drinks/drinkItem";
 
 interface Props {
   drinkSection: DrinksSectionItem;
@@ -14,7 +14,7 @@ const { drinkSection } = Astro.props;
 ---
 
 <li>
-  <section id={drinkSection.id} class="drink-section" style="display: none;">
+  <section id={drinkSection.id} class="drink-section">
     <h2>{drinkSection.tittle}</h2>
     <ul class="flex">
       {drinkSection.drinks.map((drink: DrinkItem) => <Drink drink={drink} />)}

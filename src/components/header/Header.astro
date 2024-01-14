@@ -5,11 +5,64 @@ import HamburgerMenu from "@components/header/HamburgerMenu.astro";
 
 import "@styles/components/header/Header.less";
 
-interface Props {
-  menu: MenuNodeItem[];
-}
-
-const { menu } = Astro.props;
+const menu: MenuNodeItem[] = [
+  {
+    url: "#/",
+    name: "Bebidas",
+    subNodes: [
+      {
+        url: "/drinks/refreshments",
+        name: "Refrescos",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/beers",
+        name: "Cervezas",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/liquors",
+        name: "Licores",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/cocktails",
+        name: "Cócteles",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/coffees",
+        name: "Cafés",
+        subNodes: [],
+      },
+      {
+        url: "/drinks/wines",
+        name: "Vinos",
+        subNodes: [],
+      },
+    ],
+  },
+  {
+    url: "/food",
+    name: "Menú",
+    subNodes: [],
+  },
+  {
+    url: "/#map",
+    name: "Dónde estamos",
+    subNodes: [],
+  },
+  {
+    url: "/#footer",
+    name: "Contacto",
+    subNodes: [],
+  },
+  {
+    url: "/gallery",
+    name: "Galería",
+    subNodes: [],
+  },
+];
 ---
 
 <script src="@scripts/components/header.ts"></script>

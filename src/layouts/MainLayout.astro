@@ -1,103 +1,15 @@
 ---
-import type { MenuNodeItem } from "@customTypes/node/menuNodeItem";
-
+import Head from "@components/Head.astro";
 import Footer from "@components/footer/Footer.astro";
 import Header from "@components/header/Header.astro";
 
-import "@styles/layouts/MainLayout.less";
-
-interface Props {
-  pageTittle?: string;
-}
-
-const { pageTittle } = Astro.props;
-
-const fullPageTitle = pageTittle ? "| " + pageTittle : "";
-
-const menu: MenuNodeItem[] = [
-  {
-    url: "#/",
-    name: "Bebidas",
-    subNodes: [
-      {
-        url: "/drinks/refreshments",
-        name: "Refrescos",
-        subNodes: [],
-      },
-      {
-        url: "/drinks/beers",
-        name: "Cervezas",
-        subNodes: [],
-      },
-      {
-        url: "/drinks/liquors",
-        name: "Licores",
-        subNodes: [],
-      },
-      {
-        url: "/drinks/cocktails",
-        name: "Cócteles",
-        subNodes: [],
-      },
-      {
-        url: "/drinks/coffees",
-        name: "Cafés",
-        subNodes: [],
-      },
-      {
-        url: "/drinks/wines",
-        name: "Vinos",
-        subNodes: [],
-      },
-    ],
-  },
-  {
-    url: "/food",
-    name: "Menú",
-    subNodes: [],
-  },
-  {
-    url: "/#map",
-    name: "Dónde estamos",
-    subNodes: [],
-  },
-  {
-    url: "/#footer",
-    name: "Contacto",
-    subNodes: [],
-  },
-  {
-    url: "/gallery",
-    name: "Galería",
-    subNodes: [],
-  },
-];
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.jpg" />
-    <link rel="icon" type="image/png" href="/favicon.jpg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Jovi {fullPageTitle}</title>
-  </head>
+  <Head pageTittle={pageTitle} />
   <body>
-    <Header menu={menu} />
+    <Header />
     <main
       class="flex flex-direction gap"
       style="--gap: 10px; --direction: column"
