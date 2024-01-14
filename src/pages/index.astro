@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import type { BannerItem } from "@customTypes/banner/bannerItem";
 
 import Banner from "@components/banner/Banner.astro";
@@ -20,8 +19,6 @@ const foodBanner: BannerItem = {
   background: "/index/sandwich.jpg",
   url: "/food",
 };
-
-const posts = (await getCollection('blog'));
 ---
 
 <MainLayout>
@@ -39,19 +36,6 @@ const posts = (await getCollection('blog'));
         Cuenca desde los años 70.
       </p>
     </div>
-  </section>
-  <section>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blogs/${post.slug}/`}>
-              <h4 class="title">{post.data.title}</h4>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
   </section>
   <section class="banner-container flex flex-wrap gap" style="--gap: 10px">
     <Banner banner={cocktailsBanner} />
