@@ -17,7 +17,7 @@
     max-height: 0;
     margin-left: 20px;
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
   }
 
   input:checked + label + .content {
@@ -95,14 +95,16 @@ header {
 }
 
 @media (max-width: @tablet) {
-  .navigation-wrapper {
-    nav {
-      width: 100%;
-      padding: 0px 15px;
+  header {
+    .navigation-wrapper {
+      nav {
+        width: 100%;
+        padding: 0px 15px;
 
-      ul {
-        li:not(:first-child) {
-          visibility: hidden;
+        ul {
+          li:not(:first-child) {
+            visibility: hidden;
+          }
         }
       }
     }
