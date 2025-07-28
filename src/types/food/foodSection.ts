@@ -1,7 +1,7 @@
-import type { FoodCardItem } from '../food/foodCardItem'
+import type { FoodCardItem } from "../food/foodCardItem";
 
 export type FoodSectionItem = {
-  id: string
-  title: string
-  foodCards: FoodCardItem[]
-}
+  id: string;
+  title: string;
+  foodCards: FoodCardItem[];
+};

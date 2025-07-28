@@ -14,7 +14,7 @@ const { foodSection } = Astro.props;
 
 <section id={foodSection.id} class="food-section flex" style="display: none">
   <h2>{foodSection.title}</h2>
-  <lu class="flex flex-wrap gap justify-content" style="--justify: center">
+  <lu class="flex flex-wrap gap justify-content" style="--justify: center; --gap: 20px">
     {foodSection.foodCards.map((foodCard) => <FoodCard foodCard={foodCard} />)}
   </lu>
 </section>
